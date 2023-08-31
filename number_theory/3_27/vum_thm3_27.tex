@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.27 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 4, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.27 Theorem.} Let $a,b,m,n\in\mathbb{Z}$ with $m,n>0$. Then the system
+
+\begin{align*}
+x &\equiv a\pmod n\\
+x &\equiv b\pmod m
+\end{align*}
+
+\noindent has a solution if and only if $(n,m)|(a-b)$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let the system 
+
+\begin{align*}
+x &\equiv a\pmod n\\
+x &\equiv b\pmod m
+\end{align*}
+
+\noindent have a solution. Since $x\equiv a\pmod n$ and $x\equiv b\pmod m$, \\
+$x=a+nt=b+mu$ for $t,u\in\mathbb{Z}$. Thus,
+
+\begin{align*}
+nt+a &= mu+b,\\
+a-b &= mu - nt.
+\end{align*}
+
+\noindent By Theorem 1.48, $(n,m)|(a-b)$. 
+
+\bigskip
+
+\noindent Now let $(n,m)|(a-b)$ be given. By definition, $a-b = (n,m)k$ for $k\in\mathbb{Z}$. By Theorem 1.40, there exists $t',u'\in\mathbb{Z}$ such that $(n,m)=nt'+mu'$. Thus,
+
+\begin{align*}
+a-b &= (nt'+mu')k\\
+&= nt'k+mu'k,\\
+a-nt'k &= b+mu'k.
+\end{align*}
+
+\noindent By CPI, let integers $x=a-nt'k=b+mu'k$, $T=-t'k$, and $U=u'k$. We have
+
+\begin{align*}
+x &= nT + a & x &= mU + b,\\
+x-a &= nT & x - b &= mU.
+\end{align*}
+
+\noindent By definition, $x\equiv a\pmod n$ and $x\equiv b\pmod m$. Thus, the system has a solution if and only if $(n,m)|(a-b)$.\qed
+
+\end{document}
+

@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.33 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 14, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.33 Theorem.} Let $a,b,n,r\in\mathbb{Z}$ with $a$ and $b$ not both 0. If $a=bn+r$, then $(a,b)=(b,r)$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,n,r\in\mathbb{Z}$ with $a$ and $b$ not both 0 be given such that $a=bn+r$. Since $a$ and $b$ are not both 0, $b$ and $r$ are also both not 0. We want to show $(a,b)=(b,r)$. Let $d_{1},d_{2}\in\mathbb{Z}$ such that $d_{1}=(a,b)$ and $d_{2}=(b,r)$.
+
+\bigskip
+
+\noindent Since $d_{1}=(a,b)$, we can say $d_{1}\mid a$ and $d_{1}\mid b$, and similarly, $d_{2}\mid b$ and $d_{2}\mid r$, provided $d_{2}=(b,r)$. Observing $a=bn+r$, since  $d_{2}\mid b$, $d_{2}$ divides any multiple of $b$. Both terms are divisible by $d_{2}$, therefore, the sum is also divisible by $d_{2}$. Thus, $d_{2}$ also divides $a$.
+
+\bigskip
+
+\noindent Since $d_{1}=(a,b)$, we can say $d_{2}$ is a common factor of $a$ and $b$. This leads us to
+
+\begin{equation*}
+d_{2}\leq d_{1}.
+\end{equation*}
+
+\noindent Observing $a-bn=r$, since $d_{1}\mid b$, $d_{1}$ divides any multiple of $b$. Both terms are divisible by $d_{1}$, therefore, the sum is also divisible by $d_{1}$. Thus, $d_{1}$ also divides $r$. 
+
+\bigskip
+
+\noindent Since $d_{2}=(b,r)$, we can say $d_{1}$ is a common factor. This leads us to
+
+\begin{equation*}
+d_{1}\leq d_{2}.
+\end{equation*}
+
+\noindent Since $d_{1}$ cannot be less than and greater than $d_{2}$ at the same time, $(a,b)=(b,r).$\qed
+
+\end{document}

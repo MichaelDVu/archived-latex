@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.38 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 18, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.38 Theorem.} Let $a,b\in\mathbb{Z}$. If $(a,b)=1$, then there exist $x,y\in\mathbb{Z}$ such that $ax+by=1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b\in\mathbb{Z}$ be given such that $(a,b)=1$. Let $P(n)$ for all $n\in\mathbb{N}$ be the number of steps of The Euclidian Algorithm (TEA) where $a=bq_{n}+r_{n}$, for $q,r\in\mathbb{Z}$, up to the $n^{th}$ iteration until $r_{n}=1$ such that $ax+by=1$. Consider the base case $n=1$.
+
+\begin{align*}
+a &= bq_{1}+r_{1},\\
+a &= bq_{1}+1.
+\end{align*}
+
+\noindent Rearranging, we find $a-bq_{1}=1$, which leads to $1a+(-q_{1})b=1$. Thus, there exist coefficient integers such that $ax+by=1$.
+
+\bigskip
+
+\noindent Since the base case is true, we will prove by induction. Suppose now, $P(k)$ is true for some $k\in\mathbb{Z}$. We want to show there exists $x,y\in\mathbb{Z}$ such that $ax+by=1$, provided $(a,b)=1$ and TEA requires $k+1$ steps to find a remainder $r_{k+1}=1$. Applying the division algorithm, $a=bq_{1}+r_{1}$, and $1=(a,b)=(b,r_{1})$ with $b$ and $r_{1}$ being the numbers such that TEA requires $k$ steps. Thus, there exists $u,v\in\mathbb{Z}$ such that $bu+r_{1}v=1$ by the inductive hypothesis. Notice $r_{1}=a-bq_{i}$. Substituting,
+
+\begin{align*}
+1 &= bu + v(a-bq_{i}) \\
+&= bu + av - bvq_{i} \\
+&= av + b(u-vq_{i}).
+\end{align*}
+
+\noindent Letting $x=v$ and $y=u-vq_{i}$, we find that our induction step satisfies the existence of $x,y\in\mathbb{Z}$ such that $ax+by=1$.\qed
+
+\end{document} 

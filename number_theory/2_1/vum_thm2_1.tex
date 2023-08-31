@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.1 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 26, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{Lemma TP.} Let $a,b,c\in\mathbb{Z}$. If $a|b$ and $b|c$, then $a|c$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ be given such that $a|b$ and $b|c$. By definition, $b=ax$ and $c=by$ for some $x,y\in\mathbb{Z}$. Substituting into $c$,
+
+\begin{align*}
+c &= (ax)y \\
+&= a(xy).
+\end{align*}
+
+\noindent By CPI, $xy=t$ for $t\in\mathbb{Z}$. Thus, $a|c$.\qed
+
+\bigskip
+
+\noindent\textbf{2.1 Theorem.} If $n$ is a natural number greater than 1, and that there exists a prime $p$ such that $p|n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} By contradiction, let $n\in\mathbb{N}$ with $n>1$ be given, and for all primes $p$, $p\not|n$. Let $\mathbb{S}=\{\text{the numbers greater than 1 that divide }n\}$. Since any number divides itself, the set is nonempty. By the WOANN, there exists a smallest number $p_{0}\in\mathbb{S}$. Since $p_{0}$ is a composite number, $p_{0}=xy$ for some $x,y\in\mathbb{Z}$ and both greater than 1. Since $x|p_{0}$ and $p_{0}|n$, by Lemma TP, $x|n$.
+
+\bigskip
+
+\noindent Notice that both $x$ and $p_{0}$ divide $n$. Since $1<x<p_{0}$, this contradicts the WOANN where $p_{0}$ is the smallest number that divides $n$. Thus, there exists a prime $p$ such that $p|n$.\qed
+
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.6 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.6 Theorem.} Let $a,n\in\mathbb{N}$ with $(a,n)=1$. Then there exists a natural number $k$ such that $a^k\equiv 1\pmod n$. 
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,n\in\mathbb{N}$ with $(a,n)=1$ be given. By Theorem 4.2, $(a^k,n)=1$ for any $k\in\mathbb{N}$. By Theorem 2.32 and letting $n=a^k-1$, we find that $(a^k,a^k-1)=1$. Now observing $n(1)=a^k-1$, we find $a^k\equiv 1\pmod n$.\qed
+
+\end{document}
+

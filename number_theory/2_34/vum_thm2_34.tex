@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.34 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 21, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.34 Theorem.} Let $k$ be a natural number. There exists a prime greater than $k$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is, let $k\in\mathbb{N}$ such that all primes are less than or equal $k$. Let the set $S=\{p_1,p_2,...p_m\}$ be all the primes less than or equal to $k$. Let $n+1=p_1p_2...p_m+1$ such that no $p_i$ divides $n+1$ since $(n,n+1)=1$. This allows us to conclude there is a prime in the prime factorization of $n$ that is not only, greater than $k$, but also not in set $S$. Thus, we have reach a contradiction such that there exists a prime greater than a natural number $k$.\qed
+
+\end{document}

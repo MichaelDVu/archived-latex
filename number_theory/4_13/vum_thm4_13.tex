@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.13 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 14, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.13 Theorem.} Let $p$ be a prime and let $a$ be an integer not divisible by $p$; that is, $(a,p)=1$. Then $\{a,2a,3a,...,pa\}$ is a complete residue system modulo $p$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is, given the assumptions above, $\{a,2a,3a,...,pa\}$ is not a complete residue system modulo $p$. Let $A=\{a,2a,3a,...,pa\}$. Suppose $ma\equiv na\pmod p$ where $1\leq m,n \leq p$, and WLOG $m>n$, are distinct coefficients of elements from set $A$. By definition,
+
+\begin{align*}
+p&|ma - na\\
+p&|a(m-n).
+\end{align*}
+
+Since $p\not|a$, it is implied $p$ must divide $m-n$. However, $m-n < p$, and by Theorem 2.27, $p\not|m-n$ which is a contradiction. Furthermore, this implies that for any $m$ and $n$, $ma\not\equiv na\pmod p$, which is another contradiction to our assumptions. By Thus, $\{a,2a,3a,...,pa\}$ is a complete residue system modulo $p$, provided $p$ is prime and $a\in\mathbb{Z}$ is not divisible by $p$.\qed
+
+\end{document}
+

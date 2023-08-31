@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.26 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.26 Theorem.} Let $p$ be a prime number and let $a$ be an integer. Then $p$ does not divide $a$ if and only if $(a,p)=1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose $p\not| a$, then $(a,p)=1$. By its contrapositive, suppose $(a,p)>1$, then $p|a$. Since $p$ is prime, $a$ is an integer, and its gcd is greater than 1, $(a,p)=p$. Thus, $p|a$. Since the contrapositive is true, Then $p$ does not divide $a$ if $(a,p)=1$.
+
+\bigskip
+
+\noindent Now suppose $(a,p)=1$, then $p\not| a$. Since $a,p$ are co-primes, they do not have any prime factors. Thus, $p\not| a$.
+
+\bigskip
+
+\noindent Since both directions of the biconditional statement are true, $p$ does not divide $a$ if and only if $(a,p)=1$.\qed
+
+\end{document}

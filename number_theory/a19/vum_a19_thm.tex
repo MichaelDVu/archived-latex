@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{A.19 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 5, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{A.19 Theorem.} For every natural number $n$, $1^2+2^2+2^2+\cdots +n^2= \frac{n(n+1)(2n+1)}{6}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $P(n)$ be the statement $1^2+2^2+2^2+\cdots +n^2= \frac{n(n+1)(2n+1)}{6}$. We consider the base case where $n=1$. 
+
+\bigskip
+
+\noindent For $P(1)$,
+
+ 
+\begin{align*}
+1^2 &= \frac{1(1+1)(2(1)+1)}{6}, \\
+1 &= \frac{1(2)(2+1)}{6} \\
+&= \frac{2(3)}{6} \\
+&= \frac{6}{6} \\
+&= 1.
+\end{align*}
+
+
+\noindent Since the base case is true, we will prove by induction. Suppose now, $1^2+2^2+2^2+\cdots +k^2= \frac{k(k+1)(2k+1)}{6}$ for some natural number $k$. We want to show $1^2+2^2+2^2+\cdots +k^2+(k+1)^2= \frac{(k+1)(k+2)(2k+3)}{6}$. It follows,
+
+
+\begin{align*}
+1^2+2^2+2^2+\cdots +k^2+(k+1)^2 &= \frac{k(k+1)(2k+1)}{6} +(k+1)^2 \\
+% &= \frac{k(k+1)(2k+1)}{6} +\frac{6(k+1)^2}{6} \\
+&= \frac{k(k+1)(2k+1)+6(k+1)^2}{6} \\
+&= \frac{(k+1)[k(2k+1)+6(k+1)]}{6} \\
+&= \frac{(k+1)(2k^2+k+6k+6)}{6} \\
+&= \frac{(k+1)(2k^2+7k+6)}{6} \\
+&= \frac{(k+1)(k+2)(2k+3)}{6}.
+\end{align*}
+
+
+\noindent Since $P(k+1)$ is true, given $P(k)$ is true, and the base case of $P(n=1)$ is true, $1^2+2^2+2^2+\cdots +n^2= \frac{n(n+1)(2n+1)}{6}$ is true by induction.\qed
+
+\end{document}

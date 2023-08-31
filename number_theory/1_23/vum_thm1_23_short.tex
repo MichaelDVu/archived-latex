@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.23 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.23 Theorem.} If the sum of the digits of a natural number expressed in base 10 is divisible by 3, then the number is divisible by 3 as well.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $m=$ (sum of $n$'s digits) for $n\in\mathbb{N}$ be given. Since $3\mid m$, $m\equiv 0\pmod{3}$. By Thm 1.21, $n\equiv m\pmod{3}$. By Thm 1.11, $n\equiv 0\pmod{3}$. Thus, the number is divisible 3.\qed
+
+\end{document}

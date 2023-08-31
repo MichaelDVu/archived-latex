@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.21 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.21 Theorem.} Let a natural number $n$ be expressed in base 10 as
+
+\begin{equation*}
+n=a_k a_{k-1} \cdots a_1 a_0
+\end{equation*}
+
+\noindent (Note that what we mean by this notation is that each $a_i$ is a digit of a regular base 10 number, not that the $a_i$'s are being multiplied together.) If $m= a_k + a_{k-1} + \cdots a_1 + a_0$, then $n\equiv m\pmod{3}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $n\in\mathbb{N}$ expressed in base 10 where $n=a_k a_{k-1} \cdots a_1 a_0$ be given, and let $m= a_k + a_{k-1} + \cdots a_1 + a_0$. Observe that $10\equiv 1\pmod{3}$, and by Theorem 1.18 $10^i\equiv 1^i\pmod{3}$, or simply $10^i\equiv 1\pmod{3}$ for some $i\in\mathbb{N}$. 
+
+\begin{align*}
+n&\equiv ( a_k10^k + a_{k-1}10^{k-1} + \cdots a_1 10^1 + a_0 10^0 ) \pmod{3}\\
+&\equiv ( a_k 1^k + a_{k-1}1^{k-1} + \cdots a_1 1^1 + a_0 1^0 ) \pmod{3}\\
+&\equiv ( a_k 1 + a_{k-1}1 + \cdots a_1 1 + a_0 ) \pmod{3}\\
+&\equiv ( a_k + a_{k-1} + \cdots a_1 + a_0 ) \pmod{3}\\
+&\equiv m \pmod{3}.
+\end{align*}
+
+\noindent Thus, $n\equiv m\pmod{3}$.\qed
+
+\end{document}

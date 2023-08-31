@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.4 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.4 Theorem.} Let $a,n\in\mathbb{N}$. Then there exist natural numbers $i$ and $j$, with $i\not= j$, such that $a^i\equiv a^j\pmod n$. 
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $S=\{ a,a^2,...,a^n,a^{n+1} \}$ and define $t_i\in\{ 0,1,...,n-1 \}$ by congruence $a^i\equiv t_i\pmod n$ by Theorem 3.14. Let $T=\{ t_1,t_2,...,t_{n+1} \}$ be a subset of $\{0,1,...,n-1 \}$. $T$ has at most $n$ elements, and so there are $1\leq i,j \leq n+1$ and $i\not= j$ such that $t_i\not= t_j$. Thus,
+
+\begin{align*}
+a^i &\equiv t_j\pmod n.
+\end{align*}
+
+\noindent Thus, $a^i\equiv a^j\pmod n$.\qed
+
+\end{document}
+

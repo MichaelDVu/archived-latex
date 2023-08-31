@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.12 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 1, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.12 Theorem.} Let $a,b,c,d,n\in\mathbb{Z}$ with $n>0$. If $a\equiv b\pmod{n}$ and $c\equiv d\pmod{n}$, then $a+c\equiv b+d\pmod{n}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c,d,n\in\mathbb{Z}$ with $n>0$ be given such that $a\equiv b\pmod{n}$ and $c\equiv d\pmod{n}$. By definition, $n\mid(a-b)$ and $n\mid(c-d)$. We may choose $t,u \in \mathbb{Z}$ such that $a-b=nt$ and $c-d=nu$. Adding both equations
+
+\begin{align*}
+a-b + c-d &= nt + nu \\
+&= n(t+u).
+\end{align*}
+
+\noindent By CPI, we may choose $z\in\mathbb{Z}$ such that $t+u=z$. Using algebra, $(a+c)-(b+d)=nz$. By definition, $n\mid[(a+c)-(b+d)]$. Therefore, $a+c\equiv b+d\pmod{n}$.\qed
+
+
+
+\end{document}

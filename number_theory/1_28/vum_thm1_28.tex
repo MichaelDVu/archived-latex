@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.28 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 12, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.28 Theorem.} Let $a,b,n\in\mathbb{Z}$ with $n>0$. Then $a\equiv b\pmod{n}$ if and only if $a$ and $b$ have the same remainder when divided by $n$. Equivalently, $a\equiv b\pmod{n}$ if and only if when $a=nq+r$ ($0\leq r<n$) and $b=nq'+r'$ ($0\leq r'<n$), then $r=r'$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,n\in\mathbb{Z}$ with $n>0$ be given, and let $a\equiv b\pmod{n}$. By definition, $a-b=nk$ for some $k\in\mathbb{Z}$. Thus,
+
+\begin{align*}
+a &= nk+b \\
+&= nk + nq' + r' \\
+&= n(k+q') + r'.
+\end{align*}
+
+\noindent Examining $a=nq+r$ and $a=n(k+q')+r'$, by uniqueness of TDA, $r=r'$.
+
+\bigskip
+
+\noindent Let $r=r', a=nq+r$, and $b=nq'+r'$ be given. Then,
+
+\begin{align*}
+a-nq &= b-nq', \text{ and } \\
+a-b &= nq-nq' \\
+&= n(q-q').
+\end{align*}
+
+\noindent Thus, $a-b=nt$ where $q-q'=t$ for some $t\in\mathbb{Z}$, and $a\equiv b\pmod{n}$.\qed
+
+\end{document}

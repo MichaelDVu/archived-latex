@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.42 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.42 Theorem.} Let $a,b,n\in\mathbb{Z}$. If $a\mid n$, $b\mid n$ and $(a,b)=1$, then $ab\mid n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,n\in\mathbb{Z}$ be given such that $a\mid n$, $b\mid n$, and $(a,b)=1$. By definition, $a\mid n$ and $b\mid n$ are equivalent to $n=as$ and $n=bt$, respectively, for some $s,t\in\mathbb{Z}$. By Theorem 1.38, since $(a,b)=1$, there exists $x,y\in\mathbb{Z}$ such that $ax+by=1$. Multiplying both sides by $n$,
+
+\begin{align*}
+n &= n(ax+by) \\
+&= nax + nby.
+\end{align*}
+
+\noindent Replacing $n$ in the right hand side,
+
+\begin{align*}
+n &= bt(ax) + as(by) \\
+&= ab(xt) + ab(sy)\\
+&= ab(xt+sy).
+\end{align*}
+
+\noindent By CPI, $xt+sy$ is an integer. Thus, $ab\mid n$.\qed
+
+\end{document}

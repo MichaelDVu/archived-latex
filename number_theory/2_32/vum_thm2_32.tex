@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.32 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.32 Theorem.} For all natural numbers $n$, $(n,n+1)=1$. 
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $n\in\mathbb{N}$ be given. Let $(n,n+1)=d$ with $d\geq 1$ such that $d|n$ and $d|(n+1)$. By Theorem 1.2, $d|[n-(n+1)]$. By definition, $[n-(n+1)]=dt$ for $t\in\mathbb{Z}$. Thus,
+
+\begin{align*}
+dt &= n-n+1 \\
+&= 1.
+\end{align*}
+
+\noindent Since $d\geq 1$, we could assume $d=1$. But suppose not. That is, given $dt=1$, suppose $d>1$ such that $1\leq t < dt$. It follows that $1<dt$. This is a contradiction to our given $dt=1$. Thus, $d=1=(n,n+1)$.\qed
+
+\end{document}

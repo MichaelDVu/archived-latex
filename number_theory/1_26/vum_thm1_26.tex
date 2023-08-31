@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.26 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 12, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.26 Theorem.} (The Division Algorithm) Let $n,m\in\mathbb{N}$. Then (\textit{existence part}) there exist integers $q$ (for quotient) and $r$ (for remainder) such that 
+
+\begin{equation*}
+m=nq+r
+\end{equation*}
+
+\noindent and $0\leq r < n$...
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $m,n\in\mathbb{N}$ be given. Consider $S=\{m-nq\mid m-nq\in\mathbb{N}$ and $0\leq m-nq\}$.
+
+\bigskip
+
+\noindent Note: Taking $q=0$, establishes $S$ as a non-empty set since $m\geq 0$.
+
+\bigskip
+
+\noindent By WOANN, $S$ contains a smallest element, $m-nq\in S$. Since $m-nq$ is minimal, $m-n(q+1) < 0$. Therefore, $m-nq < n$. Letting $r=m-nq$, $0\leq r < n$.\qed
+
+
+\end{document}

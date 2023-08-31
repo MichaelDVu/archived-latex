@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.2 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.2 Theorem.} Let $a,n\in\mathbb{N}$ with $(a,n)=1$. Then $(a^j,n)=1$ for any $j\in\mathbb{N}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $j=2$ be the base case such that $(a^2,n)=1$. Since $(a,n)=1$, by Theorem 1.38, there exists $x,y\in\mathbb{Z}$ such that $ax+ny=1$. Multiplying by $ax+ny$,
+
+\begin{align*}
+ax+ny &= (ax+ny)(ax+ny)\\
+&= a^2x^2 +2axny +n^2y^2\\
+&= a^2x^2 + n(2axy+ny^2)\\
+&= a^2x' + ny'
+\end{align*}
+
+\noindent where, by CPI, integers $x'=x^2$ and $y'=2axy+ny^2$. Looking at the left hand side, we know that $ax+ny=1$. Thus,
+
+\begin{equation*}
+1=a^2x'+ny'.
+\end{equation*}
+
+\noindent By Theorem 1.39, $(a^2,n)=1$. Thus, the base case is true. Suppose our assumption is true for all $j$ where $1 \leq j \leq k$. By induction, we want to show $(a^{k+1},n)=1$ is also true. By our assumption, $(a^k,n)=1$. By Theorem 1.38, there exists $t,u\in\mathbb{Z}$ such that $a^kt+nu=1$. Multiplying by $ax+ny$,
+
+\begin{align*}
+ax+ny &= (a^kt+nu)(ax+ny)\\
+&= a^{k+1}tx +a^ktny + axnu +n^2uy\\
+&= a^{k+1}tx + n(a^kty+axu+nuy)\\
+&= a^{k+1}t' + nu'
+\end{align*}
+
+\noindent where, by CPI, integers $t'=tx$ and $u'=a^kty+axu+nuy$. Looking at the left hand side, we know that $ax+ny=1$. Thus,
+
+\begin{equation*}
+1=a^{k+1}t' + nu'.
+\end{equation*}
+
+\noindent By Theorem 1.39, $(a^{k+1},n)=1$. Thus, $(a^j,n)=1$ for any $j\in\mathbb{N}$.\qed
+
+\end{document}
+

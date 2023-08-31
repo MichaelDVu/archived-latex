@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.54 Exercise}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 26, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.54 Exercise.} Find all integer solution to the equation $24x+9y=33$.
+
+\bigskip
+
+\noindent\textbf{Work.} $(24,9)=3, x_{0}=1, y_{0}=1$
+
+\begin{align*}
+c &= a \left[x_{0}+\left(\frac{bk}{(a,b)}\right)\right] +b \left[y_{0}-\left(\frac{ak}{(a,b)}\right)\right] \\
+33 &= 24 \left[1+\left(\frac{9k}{3}\right)\right] +9 \left[1-\left(\frac{24k}{3}\right)\right] \text{ for all } k\in\mathbb{Z}\\
+33 &= 24 \left[1+3k\right] +9 \left[1-8k\right]
+\end{align*}
+
+\noindent Thus, $x=1+3k$ and $y=1-8k$ for all $k\in\mathbb{Z}$.
+
+\end{document}

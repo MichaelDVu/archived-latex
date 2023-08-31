@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.24 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 31, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.24 Theorem.} Let $a,b,n\in\mathbb{Z}$ with $n>0$. Then
+
+\bigskip
+
+\noindent 1. The congruence $ax\equiv m\pmod n$ is solvable in integers if and only if $(a,n)|b$;
+
+\bigskip
+
+\noindent 2. If $x_0$ is a solution to the congruence $ax\equiv b\pmod n$, then all solutions are given by 
+
+\begin{equation*}
+x_0+\left(\frac{n}{(a,n)}m\right)\pmod n
+\end{equation*}
+
+\noindent for $m=0,1,2,...,(a,n)-1$; and
+
+\bigskip
+
+\noindent 3. If $ax\equiv b\pmod n$ has a solution, then there are exactly $(a,n)$ solutions in the canonical complete residue system modulo $n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} 1. This is exactly Theorem 3.20.
+
+\bigskip
+
+\noindent 2. Let $x=x_0$ be an integer solution to $ax\equiv b\pmod n$. By Theorem 1.53, all solutions are given by $x=x_0+\frac{nk}{(a,n)}$ for some $k\in\mathbb{Z}$. We want to show $x_0+\frac{nk}{(a,n)}\equiv x_0+\frac{nm}{(a,n)} \pmod n$ for some $m=1,2,...,(a,n)-1$. Applying the division algorithm on $k$ by $(a,n)$ gives $k=(a,n)q+m$. Thus,
+
+\begin{align*}
+x_0+\frac{nk}{(a,n)} &\equiv x_0+\frac{n[(a,n)q+m]}{(a,n)}\\
+&\equiv x_0 + nq + \frac{nm}{(a,n)} \text{, and since } nq\equiv 0\pmod n, \\
+&\equiv x_0 + \frac{nm}{(a,n)}\pmod n.
+\end{align*}
+
+\noindent Thus, all solutions are given by $x_0+\left(\frac{n}{(a,n)}m\right)\pmod n$ for \\
+$m=0,1,2,...,(a,n)-1$.
+
+\bigskip
+
+\noindent 3. Let $ax\equiv b\pmod n$ have a solution. We want to show there are exactly $(a,n)$ solutions in the canonical complete residue system modulo $n$. Suppose not. That is, let $x_0+\frac{nm}{(a,n)}\equiv x_0+\frac{nk}{(a,n)} \pmod n$ where $k\not= m$ and\\
+ $0\leq k < m \leq (a,n)-1$. Thus,
+
+\begin{align*}
+x_0+\frac{nm}{(a,n)} &\equiv x_0+\frac{nk}{(a,n)} \pmod n,\\
+\frac{nm}{(a,n)} &\equiv \frac{nk}{(a,n)} \pmod n.
+\end{align*}
+
+\noindent This implies
+
+\begin{align*}
+n &| \left[\frac{nk}{(a,n)}-\frac{nk}{(a,n)}\right]\\
+n &| \frac{n}{(a,n)}(m-k).
+\end{align*}
+
+\noindent Some things to observe, 
+
+\begin{equation*}
+0\leq k < m \leq (a,n)-1 < (a,n) \leq n.
+\end{equation*}
+
+\noindent One of the properties of divisibility says for $n$ to divide $\frac{n}{(a,n)}(m-k)>0$, the condition $n\leq \frac{n}{(a,n)}(m-k)$ must occur. Observing the above inequality, we find 
+
+\begin{equation*}
+m-k \leq (a,n)-1.
+\end{equation*}
+
+\noindent Thus,
+
+\begin{align*}
+\frac{n}{(a,n)}(n-k) \leq \frac{n}{(a,n)}[(a,n)-1] &= n-\frac{1}{(a,n)} < n.
+\end{align*}
+
+\noindent Since $n-\frac{n}{(a,n)}$ is less than $n$, we have a contradiction. Thus, if $ax\equiv b\pmod n$ has a solution, then there are exactly $(a,n)$ solutions in the canonical complete residue system modulo $n$.\qed
+
+\end{document}
+

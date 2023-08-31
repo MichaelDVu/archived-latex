@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.27 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 12, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.27 Theorem.} (The Division Algorithm) \textit{(continued from 1.26)}...Moreover (\textit{uniqueness part}), if $q,q'$ and $r,r'$ are any integers that satisfy
+
+\begin{align*}
+m&=nq+r \\
+&=nq'+r'
+\end{align*} 
+
+\noindent with $0\leq r,r' <n$, then $q=q'$ and $r=r'$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let 
+
+\begin{align*}
+m&=nq+r \\
+&=nq'+r'
+\end{align*}
+
+\noindent with $0\leq r,r' <n$ be given.
+
+\begin{align*}
+nq+r &= nq'+r', \\
+nq-nq' &= r'-r, \\
+n(q-q') &= r'-r.
+\end{align*}
+
+\noindent Since $0\leq r,r' <n$, this implies $-n < r'-r < n$. Substituting,
+
+\begin{align*}
+-n &< n(q-q') < n, \\
+ -1 &< q-q' < 1.
+\end{align*}
+
+\noindent Therefore $q-q'=0$, and $q=q'$. From here its easy to see, using substitution
+
+\begin{align*}
+nq'+r &= nq'+r', \\
+nq'-nq'+r &= r', \\
+r &= r'.
+\end{align*}
+
+\noindent Since $q=q'$ and $r=r'$, there is uniqueness.\qed
+
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.40 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 28, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.40 Theorem.} If $p$ is a prime larger than 2, then $2\cdot 3\cdot 4\cdot \cdots \cdot (p-2)\equiv 1\pmod p$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let a prime $p>2$ be given. Notice for any integers $2\leq a,b \leq p-2$, there are $\frac{p-3}{2}$ distinct pairs such that $a\not= b$. By Theorem 4.36,
+
+\begin{align*}
+a_1b_1 &\equiv 1\pmod p,\\
+a_2b_2 &\equiv 1\pmod p,\\
+&\vdots \\
+a_{\frac{p-3}{2}}b_{\frac{p-3}{2}} &\equiv 1\pmod p.
+\end{align*}
+
+\noindent By Theorem 4.38, $(a_1b_1)(a_2b_2)...(a_{\frac{p-3}{2}}b_{\frac{p-3}{2}})\equiv 1\pmod p$. Since these are distinct pairs such that $a\not= b$, $2\cdot 3\cdot 4\cdot \cdots \cdot (p-2)\equiv 1\pmod p$, provided $p>2$.\qed
+
+\end{document}
+

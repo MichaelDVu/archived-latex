@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.17 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 28, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.17 Theorem.} Let $n$ be a natural number. Any set, $\{a_1,a_2,...,a_n\}$, of $n$ integers for which no two are congruent modulo $n$ is a complete residue system.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let the set $S=\{a_1,a_2,...,a_n\}$ of $n$ integers for which no two or more are congruent modulo $n$ be given. This implies that when each of the elements are divided by $n$, there will be distinct remainders. More specifically, there will be $n$ distinct remainders. Thus, fulfilling the CRS definition. Suppose there are elements from the CCRS that did not map to the one or more elements of $S$. By the Pigeonhole principle, this means that one of the elements from the CCRS maps to two or more elements in $S$, which is a contradiction. Thus, given a set of integers for which no two are congruent modulo $n$ is a complete residue system.\qed
+
+\end{document}
+

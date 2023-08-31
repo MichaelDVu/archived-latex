@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.32 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 14, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.32 Theorem.} Let $a,n,b,r,k\in\mathbb{Z}$. If $k\mid a$, $k\mid b$, and $a=nb+r$, then $k\mid r$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,n,b,r,k\in\mathbb{Z}$ be given such that $k\mid a$, $k\mid b$, and $a=nb+r$. Let $x,y\in\mathbb{Z}$ such that, by definition, $a=kx$ and $b=ky$. Substituting $a=nb+r$ into $a=kx$
+
+\begin{align*}
+a &= kx, \\
+nb+r &= kx.
+\end{align*}
+
+\noindent Substituting for $b=ky$
+
+\begin{align*}
+n(ky)+r &= kx, \\
+r &= kx-kny, \\
+&= k(x-ny).
+\end{align*}
+
+By CPI, we can see $(x-ny)\in\mathbb{Z}$. Thus $k\mid r$.\qed
+
+
+\end{document}

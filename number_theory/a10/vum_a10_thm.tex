@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{A.10 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 2, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{A.10 Theorem.} Let $n$ be a natural number. Then $1+2+3+\cdots +n= \frac{n(n+1)}{2}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $P(n)$ be the statement $1+2+3+\cdots+n=\frac{n(n+1)}{2}$ and $n\in\mathbb{N}$. We consider the base case where $n=1$. 
+
+\bigskip
+
+\noindent For $P(1)$,
+
+\begin{equation*} 
+\begin{align*}
+1 &= \frac{1(1+1)}{2} \\
+&= \frac{2}{2} \\
+&= 1.
+\end{align*}
+\end{equation*}
+
+\noindent Since the base case is true, we will prove by induction. Suppose now $1+2+3+\cdots+k=\frac{k(k+1)}{2}$ for some $k\in\mathbb{N}$. We want to show $1+2+3+\cdots+k+(k+1)=\frac{(k+1)(k+2)}{2}$. It follows,
+
+\begin{equation*} 
+\begin{align*}
+1+2+3+\cdots+k+(k+1) &= \frac{k(k+1)}{2}+(k+1) \\
+&= \frac{k(k+1)}{2}+\frac{2(k+1)}{2} \\
+&= \frac{k(k+1)+2(k+1)}{2} \\
+%&= \frac{k^2+k+2k+2}{2} \\
+%&= \frac{k^2+3k+2}{2} \\
+&= \frac{(k+1)(k+2)}{2}.
+\end{align*}
+\end{equation*}
+
+\noindent Thus, by induction, $1+2+3+\cdots +n= \frac{n(n+1)}{2}$.\qed
+
+\end{document}

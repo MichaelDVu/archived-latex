@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.7 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.7 Theorem.} (Fundamental Theory of Arithmetic - Existence Part) Every natural number greater than 1 is either a prime number or it can be expressed as a finite product of prime numbers. That is, for every natural number greater than 1, there exist distinct primes $p_{1},p_{2},...,p_{m}$ and natural numbers $r_{1},r_{2},...,r_{m}$ such that
+
+\begin{equation*}
+n = p_{1}^{r_{1}} p_{2}^{r_{2}} \cdots p_{m}^{r_{m}}.
+\end{equation*}
+
+\noindent\textbf{Proof.} Let $n>1$ for all natural numbers be given. There exists distinct primes $p_{1},p_{2},...,p_{m}$ and natural numbers $r_{1},r_{2},...,r_{m}$ such that
+
+\begin{equation*}
+n = p_{1}^{r_{1}} p_{2}^{r_{2}} \cdots p_{m}^{r_{m}}.
+\end{equation*}
+
+\noindent We will prove by contradiction. That is, suppose there exists a natural number $n$ with $n>1$ such that $n$ cannot be written as a product of distinct primes for all prime numbers. Consider the set of natural numbers greater than 1 that cannot be written as a product of primes. A prime could not exist in this set because a prime can be written as itself times any prime raised to the zeroth power. Suppose there is a composite number that cannot be expressed as a product of primes such that the set is non-empty. By WOANN there exists a smallest number $a$. Since $a$ is composite, $a=pk$ for some $p,k\in\mathbb{N}$ and $p,k<a$. Since $a$ is minimal, $p,k$ must be primes. Since we know primes can be written as a product of primes, let $f_{1}^{h_{1}}f_{2}^{h_{2}}...f_{u}^{h_{u}}$ be the prime factorization of $p$ and $g_{1}^{s_{1}}g_{2}^{s_{2}}...g_{t}^{s_{t}}$ be the prime factorization of $k$. Since $a=pk$,
+
+\begin{align*}
+a &= (f_{1}^{h_{1}}f_{2}^{h_{2}}...f_{u}^{h_{u}})(g_{1}^{s_{1}}g_{2}^{s_{2}}...g_{t}^{s_{t}})\\
+&= f_{1}^{h_{1}}g_{1}^{s_{1}}f_{2}^{h_{2}}g_{2}^{s_{2}}...f_{u}^{h_{u}}g_{t}^{s_{t}}.
+\end{align*}
+
+\bigskip
+
+\noindent Let $h_{i}\leq r_{i}$ and $s_{i}\leq r_{i}$ such that $r_{i}=h_{i}+s_{i}$. Combining common factors,
+
+\begin{equation*}
+a = p_{1}^{r_{1}} p_{2}^{r_{2}} ... p_{m}^{r_{m}}.
+\end{equation*}
+
+\noindent We find that $a$ is a product of distinct primes which contradicts our assumption. Thus, every natural number greater than 1 can be written as the product of distinct primes.\qed
+
+\end{document}

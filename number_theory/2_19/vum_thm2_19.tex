@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.19 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{Lemma IR} For all primes $p$, $\sqrt{p}$ is irrational.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is let $\sqrt{p}\in\mathbb{Q}$. By definition, $\sqrt{p}=\frac{a}{b}$ for $a,b\in\mathbb{Z}$. Suppose $\frac{a}{b}$ is irreducible such that $(a,b)=1$. Squaring both sides, 
+
+\begin{align*}
+p &= \frac{a^2}{b^2}, \\
+pb^2 &= a^2.
+\end{align*}
+
+\noindent Since $p|a^2$, $p$ must be a prime factor of $a$. Thus $a=pk$ for some $k\in\mathbb{Z}$. Substituting,
+
+\begin{align*}
+pb^2 &= (pk)^2, \\
+b^2 &= pk^2.
+\end{align*}
+
+\noindent Notice that both $a$ and $b$ share the prime factor $p$. Since primes are greater than 1, this contradictions the assumption that $(a,b)=1$. Thus, for all primes $p$, $\sqrt{p}$ is irrational.\qed
+
+\bigskip
+
+\noindent\textbf{2.19 Theorem.} There do not exist natural numbers $m$ and $n$ such that $7m^2=n^2$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let natural numbers $m,n$ be given. Suppose $7m^2=n^2$. By the Fundamental Theorem of Arithmetic,
+
+\begin{align*}
+7(q_{1}^{2t_{1}}q_{2}^{2t_{2}}...q_{s}^{2t_{s}}) &= p_{1}^{2r_{1}}p_{2}^{2r_{2}}...p_{m}^{2r_{m}}.
+\end{align*}
+
+\noindent By Lemma 2.8,
+
+\begin{align*}
+7 &= p_{i}^{2r_{i}}, \\
+\sqrt{7} &= p_{i}^{r_{i}}.
+\end{align*}
+
+\noindent We know that prime numbers are natural numbers, and therefore rational numbers. Yet, by Lemma IR, $\sqrt{7}$ is irrational. Thus, we have a contradiction. Hence, there do not exist natural numbers $m$ and $n$ such that $7m^2=n^2$.\qed
+
+\end{document}

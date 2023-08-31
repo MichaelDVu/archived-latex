@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.22 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.22 Theorem.} If a natural number is divisible by 3, then, when expressed in base 10, the sum of its digits is divisible by 3.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let a $n\in\mathbb{N}$ be divisible by 3 be given such that when expressed in base 10, we want to show $( a_k10^k + a_{k-1}10^{k-1} + \cdots a_1 10^1 + a_0 10^0 )$ is divisible by 3. Since 10 is not divisible by 3, we can do a little algebra to make these factors of 10 work to our benefit. $a_k10^k + a_{k-1}10^{k-1} + \cdots a_1 10^1 + a_0 10^0$
+
+\begin{align*}
+&= a_k(10^k +1 -1) + a_{k-1}(10^{k-1} +1 -1) + \cdots a_1(10+1-1) + a_0(1+1-1) \\
+&= a_k(10^k +1 -1) + a_{k-1}(10^{k-1} +1 -1) + \cdots a_1(10+1-1) + a_0(1+1-1) \\
+&= a_k(10^k -1)+ a_k + a_{k-1}(10^{k-1}-1)+a_{k-1} + \cdots a_1(9)+a_1 + a_0 \\
+&= a_k(10^k -1) + a_{k-1}(10^{k-1}-1)+ \cdots 9a_1 +a_k +a_{k-1}+ \cdots +a_1 + a_0 \\
+&= ( a_k(10^k -1) + a_{k-1}(10^{k-1}-1)+ \cdots 9a_1 ) + ( a_k +a_{k-1}+ \cdots +a_1 + a_0 ).
+\end{align*}
+
+\noindent Observe each of the terms in the first group contains a factor of 3. Since the number is divisible by 3, the sum of the second term, the sum of the digits, is also divisible by 3.\qed
+
+\end{document}

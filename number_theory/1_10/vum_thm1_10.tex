@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.10 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{August 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.10 Theorem.} Let $a,b,n\in\mathbb{Z}$ with $n>0$. If $a\equiv b\pmod{n}$, then $b\equiv a\pmod{n}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,n\in\mathbb{Z}$ with $n>0$ be given such that $a\equiv b\pmod{n}$. Then by definition, $n\mid(a-b)$. We may choose $k\in\mathbb{Z}$ such that $a-b=nk$. Multiplying both sides by $-1$,
+
+
+\begin{align*}
+-(a-b) &= -(nk), \\
+b-a &= -kn.
+\end{align*}
+
+
+\noindent By CPI, we may choose $t\in\mathbb{Z}$ such that $-k=t$. Therefore, $b-a=tn$, and by definition of divisibility, $n\mid(b-a)$. Lastly, by definition of congruence of modulo, $b\equiv a\pmod{n}$.\qed
+
+
+
+\end{document}

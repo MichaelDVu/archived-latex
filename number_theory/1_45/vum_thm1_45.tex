@@ -1,0 +1,27 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.45 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.45 Theorem.} Let $a,b,c,n\in\mathbb{Z}$ with $n>0$. If $ac\equiv bc\pmod{n}$ and $(c,n)=1$, then $a\equiv b\pmod{n}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c,n\in\mathbb{Z}$ with $n>0$ be given such that $ac\equiv bc\pmod{n}$ and $(c,n)=1$. By definition, $n\mid (ac-bc)$. Factoring $c$,
+
+\begin{equation*}
+n\mid c(a-b).
+\end{equation*}
+
+\noindent By Theorem 1.41, since $(c,n)=1$, $n\mid (a-b)$, and by definition, $a\equiv b\pmod{n}$.\qed
+
+\end{document}

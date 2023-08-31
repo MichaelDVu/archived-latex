@@ -1,2 +1,6 @@
 # ignore additional files created when compiling .tex files
 *.synctex.gz
+*.aux
+*.bbl
+*.blg
+*.log

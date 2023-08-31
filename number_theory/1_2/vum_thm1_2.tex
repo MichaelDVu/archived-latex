@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.2 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{August 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.2 Theorem.} Let $a,b,c\in\mathbb{Z}$. If $a\mid b$ and $a\mid c$, then $a\mid (b-c)$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ be given such that $a\mid b$ and $a\mid c$. We may choose $k,m\in\mathbb{Z}$ such that $b=ka$ and $c=ma$. Subtracting, we find
+
+
+\begin{align*}
+b-c &= ka- ma \\
+&= a(k-m).
+\end{align*}
+
+
+\noindent By CPI, we may choose $f\in\mathbb{Z}$ such that $k-m=f$. Therefore, $b-c=fa$, and by definition, $a\mid(b-c)$.\qed
+
+
+
+\end{document}

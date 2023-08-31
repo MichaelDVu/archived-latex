@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.8 Lemma}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.8 Lemma.} Let $p$ and $q_{1},q_{2},...,q_{n}$ all be primes and let $k$ be a natural number such that $pk=q_{1}q_{2}...q_{n}$. Then $p=q_{i}$ for some $i$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $p$ and $q_{1},q_{2},...,q_{n}$ all be primes and let $k$ be a natural number such that $pk=q_{1}q_{2}...q_{n}$ be given. Consider the base case where $n=1$ such that
+
+\begin{equation*}
+pk=q_{1}.
+\end{equation*}
+
+\noindent Since $p$ is prime, $k=1$ by primality. Thus, $p=q_{1}$. By induction, suppose $pk=q_{1}q_{2}...q_{b}$ with $1<n<b$ such that $p=q_{i}$. We want to show when $pk=q_{1}q_{2}...q_{b}q_{b+1}$, $p=q_{i}$. Since $pk=q_{1}q_{2}...q_{b}q_{b+1}$, we can rewrite this as 
+
+\begin{equation*}
+p|q_{1}q_{2}...q_{b}q_{b+1}.
+\end{equation*}
+
+\noindent Let $a=q_{1}q_{2}...q_{b}$ for some $a\in\mathbb{Z}$ such that $p|aq_{b+1}$. Suppose $(p,a)=1$. By Theorem 1.41, since $p|aq_{b+1}$ and $(p,a)=1$, $p|q_{b+1}$. By definition, $pt=q_{b+1}$ for some $t\in\mathbb{Z}$. Since $p$ is prime, $t=1$ by primality. Thus, $p=q_{i}$. Since our base case and inductive hypothesis is true, the Lemma is true.\qed
+
+\end{document}

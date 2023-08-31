@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.38 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 26, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.38 Theorem.} Let $p$ be a prime and let $a$ and $b$ be integers such that $1 < a,b < p-1$ and $ab\equiv 1\pmod p$. Then $a\not= b$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is suppose $a=b$. Since $a=b$, $ab\equiv 1\pmod p$ is equivalent to $a^2\equiv 1\pmod p$. By definition,
+
+\begin{align*}
+p &| a^2-1 \\
+&| (a-1)(a+1).
+\end{align*}
+
+\noindent By Theorem 2.27, $p|a-1$ or $p|a+1$. Notice $0<a-1<p-2$ and $2<a+1<p$. This is a contradiction of $p$ being smaller than any natural number it divides. Thus, if $p$ is prime and $a,b\in\mathbb{Z}$ such that $1 < a,b < p-1$ and $ab\equiv 1\pmod p$, then $a\not= b$.\qed
+
+\end{document}
+

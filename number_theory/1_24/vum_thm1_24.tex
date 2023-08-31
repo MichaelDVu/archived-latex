@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.24 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.24 Theorem.} An integer is divisible by 5 if and only if its last digit is 0 or 5.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $n\in\mathbb{Z}$ be divisible by 5 such that $n=5k$ for some $k\in\mathbb{Z}$. If $k$ is even then $k=2p$ for some $p\in\mathbb{Z}$.
+ 
+\begin{align*}
+n &= 5(2p)\\
+&= 10p.
+\end{align*}
+
+\noindent Observe all multiples of 10 end in 0.
+
+\bigskip
+
+\noindent If $k$ is odd, then $k=2p+1$.
+
+\begin{align*}
+n &= 5(2p+1)\\
+&= 10p + 5.
+\end{align*}
+
+\noindent Any multiple of 10 plus 5 ends in 5.
+
+\bigskip
+
+\noindent Suppose now we let $n$ be a number whose last digit is 0 or 5. Any number whose last digit is 0 can be represented as $10q$ for some $q\in\mathbb{Z}$. Since 10 is divisible by 5, 5 divides any multiple of 10. Any number whose last digit is 5 can be represented as $10q+5$. Since 5 divides any multiple of $10q$ and 5, 5 divides $10q+5$. Thus, an integer is divisible by 5 if and only if its last digit is 0 or 5.\qed
+
+\end{document}

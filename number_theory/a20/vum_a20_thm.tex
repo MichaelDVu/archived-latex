@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{A.20 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 5, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{A.20 Theorem.} For every natural number $n>3$, $2^n < n!$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $P(n)$ be the statement $2^n < n!$ for$n>3$. We consider the base case where $n=4$. 
+
+\bigskip
+
+\noindent For $P(4)$,
+
+
+\begin{align*}
+2^4 &< 4!, \\
+16 &< 24.
+\end{align*}
+
+
+\noindent Since the base case is true, we will prove by induction. Suppose now, $2^k < k!$ for $k>3$. We want to show $2^{k+1} < (k+1)!$. Multiplying both sides by $k+1$,
+
+
+\begin{align*}
+(k+1)2^k &< (k+1)k!.
+\end{align*}
+
+
+\noindent Observing the right side of (1) and remembering algebra, for any natural number $z$, $z!=z(z-1)!$. Substituting $z$ for $k+1$,
+
+ 
+\begin{align*}
+z(z-1)! &= (k+1)(k+1-1)! \\
+&= (k+1)k! \\
+&= (k+1)!.
+\end{align*}
+
+
+\noindent Now we find (1) to be 
+
+\begin{equation} 
+(k+1)2^k < (k+1)!. 
+\end{equation}
+
+\noindent Suppose we compare the left side of (2) to the left side of the hypothesis. Assuming $k\geq 4$, we can say $2<(k+1)$ is true. Factoring, we find $2^{k+1}=(2)2^k$. Because $2<(k+1)$, we can say
+
+
+\begin{align*}
+2^{k+1} &< (k+1)2^k < (k+1)!, \\
+2^{k+1} &< (k+1)!.
+\end{align*}
+
+
+\noindent Since $P(k+1)$ is true, given $P(k)$ is true, and the base case of $P(n=4)$ is true, $2^n < n!$ for every natural number $n>3$ is true by induction.\qed
+
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.15 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.15 Theorem.} (Fermat's Little Theorem, Version I) If $p$ is a prime and $a$ is an integer relatively prime to $p$, then $a^{p-1}\equiv 1\pmod p$.
+
+\bigskip
+
+\noindent\textbf{Proof.} By Theorem 4.14, $a\cdot 2a\cdot 3a\cdots (p-1)a\equiv 1\cdot 2\cdot 3\cdot (p-1)\pmod p$. Simplifying,
+
+\begin{equation*}
+a^{p-1}(p-1)!\equiv (p-1)!\pmod p.
+\end{equation*}
+
+\noindent Notice since $p$ is prime, no number less than $p$ will divide $p$. $(p-1)!$ contains no factors of $p$. Thus, since $(p,(p-1)!)=1$, $a^{p-1}\equiv 1\pmod p$.\qed
+
+\end{document}
+

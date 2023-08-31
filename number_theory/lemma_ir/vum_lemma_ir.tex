@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{Lemma IR}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{Lemma IR} For all primes $p$, $\sqrt{p}$ is irrational.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is let $\sqrt{p}\in\mathbb{Q}$. By definition, $\sqrt{p}=\frac{a}{b}$ for $a,b\in\mathbb{Z}$. Suppose $\frac{a}{b}$ is irreducible such that $(a,b)=1$. Squaring both sides, 
+
+\begin{align*}
+p &= \frac{a^2}{b^2}, \\
+pb^2 &= a^2.
+\end{align*}
+
+\noindent Since $p|a^2$, $p$ must be a prime factor of $a$. Thus $a=pk$ for some $k\in\mathbb{Z}$. Substituting,
+
+\begin{align*}
+pb^2 &= (pk)^2, \\
+b &= pk^2.
+\end{align*}
+
+\noindent Notice that both $a$ and $b$ share the prime factor $p$. Since primes are greater than 1, this contradictions the assumption that $(a,b)=1$. Thus, for all primes $p$, $\sqrt{p}$ is irrational.\qed
+
+
+
+\end{document}

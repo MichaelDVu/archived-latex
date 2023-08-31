@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.50 Exercise}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.50 Exercise.} Find solution(s) to $31x+21y=1770$.
+
+\bigskip
+
+\noindent Finding (31,21),
+
+\begin{align*}
+31 &= 21(1) + 10, \\
+21 &= 10(2) +1.
+\end{align*}
+
+\noindent Substituting,
+
+\begin{align*}
+1 &= 21 - 2(10) \\
+&= 21 - 2(31 - 21) \\
+&= 21 - 2(31) + 2(21) \\
+&= - 2(31) + 3(21).
+\end{align*}
+
+\noindent Let $-2=s,3=t$ for some $s,t\in\mathbb{Z}$. Now, consider $31x+21y=1$. Multiplying both sides by 1770, 
+
+\begin{equation*}
+31(1770s)+21(1770t)=1770.
+\end{equation*} Substitute in for $s,t$ and the equation is true when $x=-3540$ and $y=5310$. But I can't figure out a general form.
+
+\end{document}

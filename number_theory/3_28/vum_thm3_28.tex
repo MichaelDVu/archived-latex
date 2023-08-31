@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.28 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 4, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.28 Theorem.} Let $a,b,m,n\in\mathbb{Z}$ with $m,n>0$ and $(m,n)=1$. Then the system
+
+\begin{align*}
+x &\equiv a\pmod n\\
+x &\equiv b\pmod m
+\end{align*}
+
+\noindent has a solution unique modulo $mn$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose
+
+\begin{align*}
+x &\equiv a\pmod n\\
+x &\equiv b\pmod m
+\end{align*}
+
+\noindent and 
+
+\begin{align*}
+y &\equiv a\pmod n\\
+y &\equiv b\pmod m.
+\end{align*}
+
+\noindent By Theorem 1.13,
+
+\begin{align*}
+x - y &\equiv a - a\pmod n & x - y &\equiv b - b\pmod m, \\
+x - y &\equiv 0\pmod n & x - y &\equiv 0\pmod m.
+\end{align*}
+
+\noindent Now our system is 
+
+\begin{align*}
+x - y &\equiv 0\pmod n \\
+x - y &\equiv 0\pmod m.
+\end{align*}
+
+\noindent This implies, $n|(x-y)$ and $m|(x-y)$. By Theorem 1.42, $mn|(x-y)$, implying $x\equiv y\pmod {mn}$. Since $(m,n)=1$, we can conclude the system has a solution by Theorem 3.27. Furthermore, the solution is unique modulo $mn$.\qed
+
+\end{document}
+

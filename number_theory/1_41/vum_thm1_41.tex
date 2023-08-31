@@ -1,0 +1,28 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.41 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.41 Theorem.} Let $a,b,c\in\mathbb{Z}$. If $a\mid bc$ and $(a,b)=1$, then $a\mid c$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ be given such that $a\mid bc$ and $(a,b)=1$. By Theorem 1.38, we know there exists $x,y\in\mathbb{Z}$ such that $ax+by=1$. Multiplying this equation by $c$,
+
+\begin{align*}
+c(ax+by) &= c(1), \\
+acx + bcy &= c.
+\end{align*}
+
+\noindent Observing the left hand side of the equation, $a$ divides any integer multiple of $a$ and $a$ divides any integer multiple of $bc$. Since $a$ divides both terms, $a\mid c$.\qed
+
+\end{document}

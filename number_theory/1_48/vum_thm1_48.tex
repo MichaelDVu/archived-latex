@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.48 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.48 Theorem.} Given $a,b,c\in\mathbb{Z}$ and $a,b$ not both 0, there exists $x,y\in\mathbb{Z}$ that satisfy the equation $ax+by=c$ if and only if $(a,b)\mid c$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ and $a,b$ not both 0 be given. Suppose there exists $x,y\in\mathbb{Z}$ that satisfy the equation $ax+by=c$. Let $d=(a,b)$ where $a=da'$ and $b=db'$ for some $a',b'\in\mathbb{Z}$. Thus,
+
+\begin{align*}
+c &= ax + by \\
+&= da'x + db'y\\
+&= d(a'x + b'y).
+\end{align*}
+
+\noindent Thus, $(a,b)\mid c$.
+
+\bigskip
+
+\noindent Now suppose $(a,b)\mid c$. Let $d=(a,b)$. By Theorem 1.40, there exists $s,t\in\mathbb{Z}$ such that $as+bt=d$. We have that $d\mid c$ such that $(as+bt)\mid c$. By definition, for some $k\in\mathbb{Z}$,
+
+\begin{align*}
+c &= (as + bt)k \\
+&= ask + btk.
+\end{align*}
+
+\noindent By CPI, let $sk=x$ and $tk=y$ for some $x,y\in\mathbb{Z}$. Thus, $ax+by=c$.
+
+\bigskip
+
+\noindent Since both directions of the biconditional statement are true, there exists $x,y\in\mathbb{Z}$ that satisfy the equation $ax+by=c$ if and only if $(a,b)\mid c$.\qed
+
+\end{document}

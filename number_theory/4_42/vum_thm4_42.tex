@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.42 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 28, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.42 Theorem.} (Converse of Wilson's Theorem) If $n$ is a natural number greater than 1 such that $(n-1)! \equiv -1\pmod n$, then $n$ is prime.
+
+\bigskip
+
+\noindent\textbf{Proof.} Recalling Theorem 4.41, if $n$ is prime, then we are done. Suppose $n$ is not prime. This means there is a number that divides $n$; let that number be an integer $a$ where $1<a < n$. By definition of the hypothesis, $n|(n-1)!+1$. Since $a|n$, $a|(n-1)!+1$. Since $a|(n-1)!$ and $a>1$, TDA says that $(n-1)!+1$ divided by $a$ leaves a remainder of 1, a contradiction. Thus, for the theorem to be true, $n$ must be prime.\qed
+
+\end{document}
+

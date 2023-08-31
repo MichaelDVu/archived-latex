@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{A.18 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 5, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{A.18 Theorem.} For every natural number $n$, $1+2+2^2+\cdots +2^n= 2^{n+1}-1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $P(n)$ be the statement $1+2+2^2+\cdots +2^n= 2^{n+1}-1$. We consider the base case where $n=0$. 
+
+\bigskip
+
+\noindent For $P(0)$,
+
+
+\begin{align*}
+2^0 &= 2^{0+1}-1, \\
+1 &= 2-1 \\
+&= 1.
+\end{align*}
+
+
+\noindent Since the base case is true, we will prove by induction. Suppose now, $1+2+2^2+\cdots +2^k= 2^{k+1}-1$ for some natural number $k$. We want to show $1+2+2^2+\cdots +2^k +2^{k+1}= 2^{k+2}-1$. It follows,
+
+
+\begin{align*}
+1+2+2^2+\cdots +2^k+2^{k+1} &= 2^{k+1}-1 +2^{k+1} \\
+&= 2(2^{k+1})-1 \\
+&= 2^{k+2}-1.
+\end{align*}
+
+
+\noindent Since $P(k+1)$ is true, given $P(k)$ is true, and the base case of $P(n=0)$ is true, $1+2+2^2+\cdots +2^n= 2^{n+1}-1$ is true by induction.\qed
+
+\end{document}

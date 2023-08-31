@@ -1,0 +1,31 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.14 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 1, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.14 Theorem.} Let $a,b,c,d,n\in\mathbb{Z}$ with $n>0$. If $a\equiv b\pmod{n}$ and $c\equiv d\pmod{n}$, then $ac\equiv bd\pmod{n}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c,d,n\in\mathbb{Z}$ with $n>0$ be given such that $a\equiv b\pmod{n}$ and $c\equiv d\pmod{n}$. By definition, $n\mid(a-b)$ and $n\mid(c-d)$. We may choose $t,u \in \mathbb{Z}$ such that $a-b=nt$ and $c-d=nu$. Using algebra, $a=nt+b$ and $c=nu+d$. Multiplying both equations
+
+\begin{align*}
+ac &= (nt+b)(nu+d) \\
+   &= ntnu+ntd+bnu+bd \\
+	 &= n(tnu+td+bu)+bd.
+\end{align*}
+
+\noindent By CPI, we may choose $z\in\mathbb{Z}$ such that $tnu+td+bu=z$. Using algebra, $ac=nz+bd$, and consequently $ac-bd=nz$. By definition, $n\mid[(ac)-(bd)]$. Therefore, $ac\equiv bd\pmod{n}$.\qed
+
+
+
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.16 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.16 Theorem.} (Fermat's Little Theorem, Version II) If $p$ is a prime and $a$ is any integer, then $a^{p}\equiv a\pmod p$.
+
+\bigskip
+
+\noindent\textbf{Proof.} We will examine by cases.
+
+\bigskip
+
+\noindent\textbf{Case 1.} Suppose $(a,p)=1$. By Theorem 4.15, $a^{p-1}\equiv 1\pmod p$. Multiplying $a$ to both sides,
+
+\begin{align*}
+a^{p-1}a &\equiv 1(a)\pmod p,\\
+a^p &\equiv a\pmod p.
+\end{align*}
+
+\noindent Thus, letting $(a,p)=1$ satisfies the theorem.
+
+\bigskip
+
+\noindent\textbf{Case 2.} Suppose $(a,p)\not= 1$. This implies $(a,p)=p$. Since $p|a$, $a\equiv 0\pmod p$. Also, $p$ divides any integer multiple of $a$ let's us know $a^p\equiv 0\pmod p$. Thus, $a^p\equiv a\pmod p$ by transitivity and reflexivity.
+
+\bigskip
+
+\noindent Since both cases are true, if $p$ is a prime and $a$ is any integer, then $a^{p}\equiv a\pmod p$.\qed
+
+\end{document}
+

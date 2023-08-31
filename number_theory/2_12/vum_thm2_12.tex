@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.12 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 3, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.12 Theorem} Let $a$ and $b$ be natural numbers greater than 1 and let $p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}$ be the unique prime factorization of $a$ and let $q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}$ be the unique prime factorization of $b$. Then $a|b$ if and only if for all $i\leq m$ there exists a $j\leq s$ such that $p_{i}=q_{j}$ and $r_{i}\leq t_{j}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a$ and $b$ be natural numbers greater than 1 and let $p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}$ be the unique prime factorization of $a$ and let $q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}$ be the unique prime factorization of $b$ be given such that $a|b$ if and only if for all $i\leq m$ there exists a $j\leq s$ such that $p_{i}=q_{j}$ and $r_{i}\leq t_{j}$.
+
+\bigskip
+
+\noindent Suppose $a|b$. By the FTA, write $a=p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}$ and $b=q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}$. We will show two things. First, for any $1\leq i\leq m$ there is a corresponding value $1\leq j \leq s$ such that $p_i=q_j$. Second, for such $i$ and $j$, $r_{i}\leq t_{j}$. By definition, $b=an$ for some $n\in\mathbb{Z}$ such that
+
+\begin{align*}
+q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}} &= p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}(n).
+\end{align*}
+
+\noindent By the FTA, write $n=d_{1}^{v_{1}}d_{2}^{v_{2}}...d_{g}^{v_{g}}$. Equivalently, we have
+
+\begin{align*}
+q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}} &= (p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}})(d_{1}^{v_{1}}d_{2}^{v_{2}}...d_{g}^{v_{g}}), \\
+&= p_{1}^{r_{1}}d_{1}^{v_{1}}p_{2}^{r_{2}}d_{2}^{v_{2}}...p_{m}^{r_{m}}d_{g}^{v_{g}}.
+\end{align*}
+
+\noindent Without loss of generality, we can combine all common primes on the right hand side and keep the $p_{i}^{r_{i}}$ naming convention such that 
+
+\begin{equation*}
+q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}} = p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}.
+\end{equation*}
+
+\noindent By the uniqueness part of the FTA, the prime factorization of $b$ must equal the right hand side. Thus, for any $1\leq i\leq m$ there is a corresponding value $1\leq j \leq s$ such that $p_i=q_j$, and secondly, for such $i$ and $j$, $r_{i}\leq t_{j}$ (their exponents).
+
+\bigskip
+
+\noindent Suppose that without loss of generality that $a=p_1^{r_1}\cdots p_m^{r_m}$ and $b=p_1^{t_1} \cdots p_m^{t_m}\cdots p_s^{t_s}$ where $r_i\leq t_i$ for all $1\leq i\leq m$. We will show $a|b$. Let $k\in\mathbb{Z}$ with a UPF of $p_{1}^{v_{1}}p_{2}^{v_{2}}...p_{g}^{v_{g}}$ such that when multiplied to $a$,
+
+\begin{align*}
+ak &= (p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}) (p_{1}^{v_{1}}p_{2}^{v_{2}}...p_{g}^{v_{g}}) \\
+ &= p_{1}^{r_{1}}p_{1}^{v_{1}}p_{2}^{r_{2}}p_{2}^{v_{2}}...p_{m}^{r_{m}}p_{g}^{v_{g}}.
+\end{align*}
+
+\noindent Letting $r_{i}+v_{i}=t_{i}$, $v_{i}=t_{i}-r_{i}$ where $v_{i}\geq 0$ because $r_{i}\leq t_{i}$, we now combine common factors. Thus,
+
+\begin{equation*}
+an = p_{1}^{t_{1}}p_{2}^{t_{2}}...p_{s}^{t_{s}}.
+\end{equation*}
+
+\noindent Let the $p_{1}^{t_{1}}p_{2}^{t_{2}}...p_{s}^{t_{s}}=b$. Thus, $a|b$.\qed
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{A.30 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 5, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{A.30 Theorem.} Every natural number can be written as the sum of distinct powers of 2.
+
+\bigskip
+
+\noindent\textbf{Proof.} Assume $P(k)$ for $n\leq k$ can be written as the sum of distinct powers of 2. We will prove $P(n)$ for all natural numbers $n$ by strong induction. 
+
+\bigskip
+
+\noindent\textbf{Base Case.} For $P(1)$,
+
+\begin{align*}
+1 &= 2^0 \\
+&= 1.
+\end{align*}
+
+\noindent The base case $P(1)$ is true.
+
+\bigskip
+
+\noindent\textbf{Inductive Step.} Suppose $P(n)$ is true for every natural number $n\leq k$. We want to show $P(k+1)$ is also true.
+
+\bigskip
+
+\noindent\textbf{Case 1.} If $k$ is even, it is easy to see that the sum of distinct power of 2 does not contain $2^0$. When we consider $k+1$, it is easy to see this is the previous sum plus $2^0=1$, a distinct power of 2.
+
+\bigskip
+
+\noindent\textbf{Case 2.} If $k$ is odd, then $k=2m-1$ for some $m\in\mathbb{Z}$. Then $k+1=2m$. Since $m\leq k$, $m$ can be written as the sum of distinct powers of 2, the same way $k+1$ is true in the previous case.
+
+\bigskip
+
+\noindent Since the base case of $P(1)$ and both cases of $P(k+1)$ are true, every natural number can be written as the sum of distinct powers of 2.\qed
+
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.33 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.33 Theorem.} Let $k\in\mathbb{N}$. Then there exists a $n\in\mathbb{N}$ (which will be much larger than $k$) such that no natural number less than $k$ and greater than 1 divides $n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $k\in\mathbb{N}$ be given. Let $n>k$ for $n\in\mathbb{N}$ and $1<a<k$ for $a\in\mathbb{N}$ such that $a\not| n$. By contradiction, suppose $a|n$. recalling $a$ is any natural number less than $k$, it follows that $a|k!$ since $a=k-i$ and $k!=k(k-1)(k-2)...(2)(1)$ for all $1\leq i< k$. Let $n=k!+1$. We know that $k!$ and $a$ are divisible, thus they have a common factor. By Theorem 2.32, $(k!, k!+1)=1$. This means $n$ does not have any common factors with $k!$ and $a$. Thus, there exists a $n\in\mathbb{N}$ (which will be much larger than $k$) such that no natural number less than $k$ and greater than 1 divides $n$.\qed
+
+
+\end{document}

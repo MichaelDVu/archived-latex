@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.43 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.43 Theorem.} Let $a,b,n\in\mathbb{Z}$. If $(a,n)=1$ and $(b,n)=1$, then $(ab,n)=1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,n\in\mathbb{Z}$ be given such that $(a,n)=1$ and $(b,n)=1$. By Theorem 1.38, since $(a,n)=1$ and $(b,n)=1$, there exists $x,y,s,t\in\mathbb{Z}$ such that $ax+ny=1$ and $bs+nt=1$, respectively. Multiplying the two equations together,
+
+\begin{align*}
+1 &= (ax+ny)(bs+nt) \\
+&= axbs + axnt + nybs + n^2yt\\
+&= ab(xs) + n(axt + ybs + nyt).
+\end{align*}
+
+\noindent By CPI, $xy=q$ and $axt + ybs + nyt=r$ for some $q,r\in\mathbb{Z}$. Thus, $abq + nr = 1$. By Theorem 1.39, $(ab,n)=1$.\qed
+
+\end{document}

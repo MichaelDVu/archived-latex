@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.11 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 14, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.11 Theorem.} Let $a,n\in\mathbb{N}$ with $n>1$ and $(a,n)=1$. Then $\text{ord}_n(a)<n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $k=\text{ord}_n(a)$. By Theorem 4.8, we know that the numbers of the set $A=\{a^1,a^2,...,a^k\}$ are pairwise incongruent modulo $n$. Consider the set $S=\{ a^1,a^2,...,a^n\}$ as a subset of $A$. $S$ has $n$ elements and are pairwise incongruent mod $n$. Therefore, by Theorem 3.17, $S$ is CRS modulo $n$. In particular, there exists $i\in\mathbb{N}$ with $1\leq i\leq n$ such that $a^i\equiv 0\pmod n$. By Theorem 4.2, $(a^i,n)=1$, but by Theorem 4.3, this implies $(0,n)=1$. However, $(0,n)=n>1$ which contradicts the original assumption that $n>1$. Thus, $\text{ord}_n(a)<n$.\qed
+
+\end{document}
+

@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.37 Exercise}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 14, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.37 Exercise.} Find integers $x$ and $y$ such that $162x+31y=1$.
+
+\begin{align*}
+162 &= 31(5)+7 \\
+31 &= 7(4)+3\\
+7 &= 3(2)+1
+\end{align*}
+
+\noindent Doing some fancy isolation of the various equations
+
+\begin{align*}
+1 &= 7-3(2)\\
+ &= 7 - [31-7(4)](2)\\
+  &= [162-31(5)] - 2\{31-[162-31(5)]4\}\\
+ &= 162-5(31) - 2\{31-[4(162)-20(31)]\}\\
+  &= 162-5(31) - 2(31)+8(162)-40(31)\\
+ &= 9(162)+(-47)(31).
+\end{align*}
+
+\noindent We find $x=9$ and $y=-47$.
+
+\end{document}

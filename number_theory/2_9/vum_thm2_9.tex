@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.9 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 3, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.9 Theorem (Fundamental Theorem of Arithmetic - Uniqueness Part).} Let $n$ be a natural number. Let \{$p_{1},p_{2},...,p_{m}$\} and \{$q_{1},q_{2},...,q_{s}$\} be sets of primes with $p_{i}\not= p_{j}$ if $i \not= j$ and $q_{i}\not= q_{j}$ if $i \not= j$. Let \{$r_{1},r_{2},...,r_{m}$\} and \{$t_{1},t_{2},...,t_{s}$\} be sets of natural numbers such that
+
+\begin{align*}
+n &= p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}\\
+&= q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}.
+\end{align*}
+
+\noindent Then $m=s$ and \{$p_{1},p_{2},...,p_{m}$\} = \{$q_{1},q_{2},...,q_{s}$\}. That is, the sets of primes are equal but their elements are not necessarily listed in the same order; that is, $p_{i}$ may or may not equal $q_{i}$. Moreover, if $p_{i}=q_{j}$ then $r_{i}=t_{j}$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $n$ be a natural number. Let \{$p_{1},p_{2},...,p_{m}$\} and \{$q_{1},q_{2},...,q_{s}$\} be sets of primes with $p_{i}\not= p_{j}$ if $i \not= j$ and $q_{i}\not= q_{j}$ if $i \not= j$. Let \{$r_{1},r_{2},...,r_{m}$\} and \{$t_{1},t_{2},...,t_{s}$\} be sets of natural numbers be given such that
+
+\begin{align*}
+n &= p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}}\\
+&= q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}.
+\end{align*}
+
+\noindent Suppose not. That is, let the prime factorizations be different such that $m\not= s$. Suppose we canceled out all common prime factors by dividing. For simplicity, the naming convention will be the same but the two sets have no matching prime with each other such that
+
+\begin{equation*}
+p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{m}^{r_{m}} = q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}.
+\end{equation*}
+
+\noindent Let $k$ be the product of all but one of the primes on the left hand side and call that prime $p$ such that 
+\begin{equation*}
+ pk = q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}.
+ \end{equation*} 
+
+\noindent By Lemma 2.8, $p=q_{i}$. This means that all of the primes on one side have a matching prime on the other side, which contradicts our assumption above. Thus, $m=s$ such that every natural number has a unique prime factorization.
+
+\bigskip
+
+\noindent Moreover, since $p_{i}=q_{j}$, then $r_{i}=t_{j}$. By contradiction, suppose $p_{i}=q_{j}$ and $r_{i}\not=t_{j}$ with $r_{i}>t_{j}$. Since $r_{i}>t_{j}$, let $r_{i}=t_{j}+r_{i}$ such that $p_{i}^{r_{i}}=p_{i}^{t_{j}}p_{i}^{r_{i}-t_{j}}$. Thus,
+
+\begin{equation*}
+p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{i}^{t_{j}}p_{i}^{r_{i}-t_{j}}...p_{m}^{r_{m}} = q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{j}^{t_{j}}...q_{s}^{t_{s}}.
+\end{equation*}
+
+\noindent Notice $p_{i}^{t_{j}}$ and $q_{j}^{t_{j}}$ have the same exponent. Since $p_{i}=q_{j}$, we can divide and cancel those factors from each side such that
+
+\begin{equation*}
+p_{1}^{r_{1}}p_{2}^{r_{2}}...p_{i}^{r_{i}-t_{j}}...p_{m}^{r_{m}} = q_{1}^{t_{1}}q_{2}^{t_{2}}...q_{s}^{t_{s}}.
+\end{equation*}
+
+\noindent Notice the left hand side has an extra factor. This contradicts the Fundamental Theorem of Arithmetic. Thus, if $p_{i}=q_{j}$, then $r_{i}=t_{j}$.\qed
+
+\end{document}

@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.19 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 28, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.19 Theorem.} Let $a,b$, and $c$ be integers with $n>0$. Show that $ax\equiv b\pmod n$ has a solution if and only if there exist integers $x,y$ such that $ax+ny=b$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $ax\equiv b\pmod n$ be given such that a solution exists. By definition, $ax-b=nk$ for $k\in\mathbb{Z}$. Rearranging, $ax+ny=b$ where $y=-k$. Thus, $ax\equiv b\pmod n$. Now let $x,y\in\mathbb{Z}$ be given such that $ax+ny=b$. Rearranging, $ax-b=-ny$. Substituting $-y=t$ for $t\in\mathbb{Z}$, $ax-b=nt$. By definition, $ax\equiv b \pmod n$. Thus, $ax\equiv b\pmod n$ has a solution if and only if there exist integers $x,y$ such that $ax+ny=b$.\qed
+
+\end{document}
+

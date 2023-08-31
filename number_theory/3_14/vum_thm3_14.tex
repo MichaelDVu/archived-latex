@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.14 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.14 Theorem.} Given any integer $a$ and any natural number $n$, there exists a unique integer $t$ in the set $\{0,1,2,...,n-1\}$ such that $a\equiv t\pmod n$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a\in\mathbb{Z}$ be given. By TDA, there exists a unique quotient $q$ and unique remainder $t$ such that
+
+\begin{align*}
+a &= nq + t \text{ for } n\in\mathbb{Z}, \\
+a-t &= nq.
+\end{align*}
+
+\noindent Thus, by definition, $a\equiv t\pmod n$.\qed
+
+\end{document}
+

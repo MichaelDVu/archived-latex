@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.41 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 28, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.41 Theorem.} (Wilson's Theorem) If $p$ is a prime, then $(p-1)! \equiv -1\pmod p$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let a prime $p$ be given. Letting $p=2$, 
+
+\begin{align*}
+(2-1)! &\equiv -1\pmod 2, \\
+1 &\equiv -1\pmod 2.
+\end{align*}
+
+\noindent We find $(p-1)! \equiv -1\pmod p$ to be true when $p=2$. Note $p=3$ is also trivial. Suppose $p>3$. By Theorem 4.40, $(p-2)!\equiv 1\pmod p$. By definition,
+
+\begin{align*}
+pk &= (p-2)!-1 \text{ for some } k\in\mathbb{Z}.
+\end{align*}
+
+\noindent Multiplying both sides by $p-1$,
+
+\begin{align*}
+pk(p-1) &= (p-1)(p-2)!-(p-1) \\
+&= (p-1)! - p + 1.
+\end{align*}
+
+\noindent Rearranging,
+
+\begin{align*}
+(p-1)!+1 &= pk(p-1)+p \\
+&= ppk-pk+p\\
+&= p(pk-k+1).
+\end{align*}
+
+\noindent By CPI, let $pk-k+1=k'\in\mathbb{Z}$ such that $(p-1)!+1=pk'$. Thus, by definition, $(p-1)! \equiv -1\pmod p$.\qed
+
+\end{document}
+

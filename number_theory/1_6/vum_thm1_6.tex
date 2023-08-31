@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.6 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{August 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.6 Theorem.} Let $a,b,c\in\mathbb{Z}$. If $a\mid b$,then $a\mid bc$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ be given such that $a\mid b$. We may choose $k\in\mathbb{Z}$ such that $b=ka$. Multiplying both sides by $c$,
+
+
+\begin{align*}
+b(c) &= ka(c) \\
+&= a(kc).
+\end{align*}
+
+
+\noindent By CPI, we may choose $m\in\mathbb{Z}$ such that $kc=m$. Therefore, $bc=am$, and by definition, $a\mid(bc)$.\qed
+
+
+
+\end{document}

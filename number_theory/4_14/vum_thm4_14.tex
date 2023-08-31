@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.14 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.14 Theorem.} Let $p$ be a prime and let $a$ be an integer not divisible by $p$; that is, $(a,p)=1$. Then 
+
+\begin{equation*}
+a\cdot 2a\cdot 3a\cdots (p-1)a\equiv 1\cdot 2\cdot 3\cdot (p-1)\pmod p. 
+\end{equation*}
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $A=\{a,2a,3a,...,(p-1)a\}$ and $N=\{1,2,3,...,p-1\}$. By Theorem 4.13, $ia\equiv j\pmod p$ where $1\leq i,j \leq p-1$. Note that $p|pa$ is equivalent to $pa\equiv 0\pmod p$. By Theorem 1.14, the product of $A$ is congruent to the product of $N$ modulo $p$. Thus, $a\cdot 2a\cdot 3a\cdots (p-1)a\equiv 1\cdot 2\cdot 3\cdot (p-1)\pmod p$.\qed
+
+\end{document}
+

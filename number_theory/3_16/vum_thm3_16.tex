@@ -1,0 +1,22 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.16 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 24, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.16 Theorem.} Let $n$ be a natural number. Every complete residue system modulo $n$ contains $n$ elements.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is, let the set $\{a_1,a_2,...,a_k\}$ of integers not contain $n$ elements. Suppose this set has less than $n$ elements, then by definition of CRS, one element from the integer set is congruent to two or more CCRS modulo $n$, which is a contradiction to the definition. On the otherhand, letting the set have more than $n$ elements implies two or more $a_i$ are congruent to one of the CCRS modulo $n$, which also contradicts the definition of CRS. Thus, every complete residue system modulo $n$ contains $n$ elements.\qed
+
+\end{document}
+

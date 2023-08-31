@@ -1,0 +1,24 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.10 Exercise}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 30, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.10 Exercise.} Express $n=12!$ as a product of primes.
+
+\begin{align*}
+n &= 1 (2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12) \\
+&= 1 (2)(3)(2 \times 2)(5)(2 \times 3)(7)(2 \times 4)(3 \times 3)(2 \times 5)(11)(3 \times 4) \\
+&= 1 (2)(3)(2 \times 2)(5)(2 \times 3)(7)(2 \times 2 \times 2)(3 \times 3)(2 \times 5)(11)(3 \times 2 \times 2)\\
+&= 1 \times 2^{10} \times 3^5 \times 5^2 \times 7 \times 11
+\end{align*}
+
+\end{document}

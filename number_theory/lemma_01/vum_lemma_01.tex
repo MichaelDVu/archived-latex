@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{Lemma 01}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{Lemma 01.} Let $a,b\in\mathbb{Z}$ and both not 0. If $(a,b)=d$, then for $a=da'$ and $b=db'$, $(a',b')=1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b\in\mathbb{Z}$ with both not 0 and $(a,b)=d$ be given such that $a=da'$ and $b=db'$. By contradiction, suppose $(a',b')\not= 1$. Thus, $(a',b')=k$ such that $a'=ka''$ and $b'=kb''$. Substituting in to $a$ and $b$, 
+
+\begin{equation*}
+a=dka'' \text{ and } b=dkb''
+\end{equation*}
+
+\noindent Letting $dk=t$ for $t\in\mathbb{Z}$,
+
+\begin{equation*}
+a=ta'' \text{ and } b=tb''.
+\end{equation*}
+
+\noindent Notice that $t|a$ and $t|b$. Also observe that $t>d$. This contradicts $(a,b)=d$. Thus, $(a',b')=1$.\qed
+
+\end{document}

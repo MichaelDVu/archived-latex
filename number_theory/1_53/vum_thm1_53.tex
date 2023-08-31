@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.53 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 26, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.53 Theorem.} Let $a,b,c\in\mathbb{Z}$ with $a$ and $b$ not both 0. If $x=x_{0}$, $y=y_{0}$ is an integer solution to the equation $ax+by=c$ (that is, $ax_{0}+by_{0}=c$) then for every $k\in\mathbb{Z}$, the numbers
+
+\begin{equation*}
+x = x_{0} + \frac{kb}{(a,b)} \text{ and } y = y_{0} - \frac{ka}{(a,b)}
+\end{equation*}
+
+\noindent are integers that also satisfy the linear Diophantine equation $ax+by=c$. Moreover, every solution to the linear Diophantine equation $ax+by=c$ is of this form.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a,b,c\in\mathbb{Z}$ with $a$ and $b$ not both 0 be given. Let $x=x_{0}$, $y=y_{0}$ be an integer solution to the equation $ax+by=c$. Thus,
+
+\begin{align*}
+c &= a\left[x_{0} + \frac{kb}{(a,b)} \right] + b\left[y_{0} - \frac{ka}{(a,b)} \right] \\
+&= ax_{0} + \frac{kab}{(a,b)} + by_{0} - \frac{kab}{(a,b)} \\
+&= ax_{0}+by_{0}.
+\end{align*}
+
+\noindent Thus, $x=x_{0}$, $y=y_{0}$ is an integer solution to the equation $ax+by=c$.
+
+\bigskip
+
+\noindent Moreover, let $m,n\in\mathbb{Z}$ such that $m=x-x_{0}$ and $n=y-y_{0}$. Notice $x=x_{0}+m$ and $y=y_{0}+n$. Substituting,
+
+\begin{align*}
+c &= a(x_{0}+m) + b(y_{0}+n) \\
+&= ax_{0} + by_{0} + am + bn.
+\end{align*}
+
+\noindent Recalling $ax_{0}+by_{0}=c$ and substituting,
+
+\begin{align*}
+c &= c + am + bn, \\
+0 &= am + bn.
+\end{align*}
+
+\noindent Thus, $bn= -am$. Letting $d=(a,b)$ such that $d|a$ and $d|b$. By definition, $a=dA$ and $b=dB$ for $A,B\in\mathbb{Z}$. Substituting,
+
+\begin{align*}
+dBn &= -dAm, \\
+Bn &= -Am.
+\end{align*}
+
+\noindent Thus, $B|-Am$ and we know $d=1$, and without loss of generality, $B\not= 0$. By Theorem 1.41, $B|m$ such that $m=Bk$ for $k\in\mathbb{Z}$. By substitution,
+
+\begin{align*}
+Bn &= -AkB,\\
+n &= -Ak.
+\end{align*}
+
+\noindent Collecting ourselves, $c = a(x_{0}+m) + b(y_{0}+n)$, $m=Bk$, $n=-Ak$, $A=\frac{a}{d}$, $B=\frac{b}{d}$, and $d=(a,b)$. Substituting in what we know,
+
+\begin{align*}
+c &= a(x_{0}+Bk) + b(y_{0}+(-Ak)) \\
+&= a\left[x_{0}+\frac{b}{d}k\right] + b\left[y_{0}-\frac{a}{d}k\right] \\
+&= a\left[x_{0}+\frac{bk}{(a,b)}\right] + b\left[y_{0}-\frac{ak}{(a,b)}\right].
+\end{align*}
+
+\noindent Thus, every solution to the linear Diophantine equation $ax+by=c$ is of this form.\qed
+
+\end{document}

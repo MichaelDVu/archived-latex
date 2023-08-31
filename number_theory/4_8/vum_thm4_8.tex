@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.8 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 9, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.8 Theorem.} Let $a,n\in\mathbb{N}$ with $(a,n)=1$ and let $k=\text{ord}_n(a)$. Then the numbers $a^1,a^2,...,a^k$ are pairwise incongruent modulo $n$.
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is, there exists a pair of numbers $1 \leq i,j \leq k$, and WLOG $i>j$, such that $a^i$ is congruent to $a^j$. Let $a^i\equiv a^j\pmod n$. Factoring $a^j$, $a^{i-j}a^j\equiv a^j\pmod n$. By CPI, let $i-j=k'\in\mathbb{Z}$ such that $a^{k'}a^j\equiv a^j\pmod n$. Since $(a^j,n)=1$, $a^{k'}\equiv 1\pmod n$. Since $i,j<k$, $i-j=k'<k$. This contradicts the initial assumption that $k=\text{ord}_n(a)$. Thus, the numbers $a^1,a^2,...,a^k$ are pairwise incongruent modulo $n$, provided $(a,n)=1$ and $k=\text{ord}_n(a)$.\qed
+
+\end{document}
+

@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{4.3 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{November 7, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{4.3 Theorem.} Let $a,b,n\in\mathbb{Z}$ with $n>0$ and $(a,n)=1$. If $a\equiv b\pmod n$, then $(b,n)=1$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $a\equiv b\pmod n$ with $(a,n)=1$. By definition, $a=nk+b$ for some $k\in\mathbb{Z}$. Since $(a,n)=1$, by Theorem 1.38, there exists $x,y\in\mathbb{Z}$ such that $ax+ny=1$. Substituting for $a$,
+
+\begin{align*}
+1 &= x(nk+b)+by\\
+&= nkx + bx + by\\
+&= b(x+y)+n(kx).
+\end{align*}
+
+\noindent By CPI, let integers $x'=x+y$ and $y'=kx$ such that $bx'+ny'=1$. By Theorem 1.39, $(b,n)=1$. Thus, if $a\equiv b\pmod n$, then $(b,n)=1$, provided $n>0$ and $(a,n)=1$.\qed
+
+\end{document}
+

@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.35 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 21, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.35 Theorem.} There are infinitely many prime numbers.
+
+\bigskip
+
+\noindent\textbf{Proof.} Suppose not. That is, suppose there is only a finite number of primes. Let $S=\{p_1,p_2,...,p_k\}$ be the set of all the primes. By FTA, let $n$ be  natural number with a prime factorization of all the elements in set $S$ such that $n=p_1p_2...p_k$. Now consider $n+1$. By FTA, it too has a prime factorization such that one of its prime factors, by Theorem 2.1, divide $n+1$ (and this shows the existence of a prime factor). By Theorem 2.32, we know $(n,n+1)=1$ which means they do not share any common prime factors. This contradicts the set $S$ containing all the primes. Thus, there are infinitely many prime numbers.\qed
+
+\end{document}

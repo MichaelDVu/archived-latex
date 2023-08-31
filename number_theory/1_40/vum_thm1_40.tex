@@ -1,0 +1,40 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{1.40 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{September 19, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{1.40 Theorem.} For any integers $a$ and $b$ not both 0, there are integers $x$ and $y$ such that $ax+by=(a,b)$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $d=(a,b)$ and $ax+by=k$ for $k\in\mathbb{N}$. Since $d|a$ and $d|b$, $d|k$. Thus, $d\leq k$. Let $S= \{\text{all }c \text{ that can be written as }ax+by \mid c\in\mathbb{N}\}$. Letting $x=a$ and $b=y$, we find that $a^2+b^2$ equals a natural number. Thus, the set is non-empty. By the WOANN, there exists a smallest element, call it $k$. Suppose $k$ does not divide $a$. By TDA,
+
+\begin{align*}
+a &= kq + r,\\
+r &= a - kq  \text{ with } 0< r < k.
+\end{align*}
+
+\noindent Substituting $k=ax+by$ into $r$, 
+
+\begin{align*}
+r &= a - q(ax+by) \\
+&= a - aqx + bqy\\
+&= a(1-qx) + b(qy).
+\end{align*}
+
+\noindent Notice now that $r$ can be written as $ax'+by'$ which contradicts $k$ being the smallest that can be expressed in that form. Thus, $k|a$. Without loss of generality, the same argument can be such that $k|b$. Thus, $k=(a,b)=d$.
+
+\bigskip
+
+\noindent Gathering our info, we have $(a,b)\leq k$ and $(a,b)=k$. Since $k$ cannot be greater than AND equal to $(a,b)$, it must be that $k=(a,b)$. Thus, $ax+by=(a,b)$.\qed
+
+\end{document}

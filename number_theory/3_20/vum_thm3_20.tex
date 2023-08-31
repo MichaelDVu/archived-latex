@@ -1,0 +1,26 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{3.20 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 31, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{3.20 Theorem.} Let $a,b,n\in\mathbb{Z}$ with $n>0$. The equation $ax\equiv b\pmod n$ has a solution if and only if $(a,n)|b$.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $ax\equiv b\pmod n$ be given such that it has a solution. By Theorem 3.19, there exists $x,y\in\mathbb{Z}$ such that $ax+ny=b$. By Theorem 1.48, $(a,n)|b$. 
+
+\bigskip
+
+\noindent Let $(a,n)|b$ be given. By Theorem 1.48, there exists integers $x,y$ such that $ax+ny=b$. By Theorem 3.19, $ax\equiv b\pmod n$.\qed
+
+\end{document}
+

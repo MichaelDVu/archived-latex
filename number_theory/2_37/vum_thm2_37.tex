@@ -1,0 +1,21 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb, amsmath, graphicx,amsthm,setspace}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{2.37 Theorem}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{October 21, 2017}  
+\rfoot[rf-even]{}
+
+\begin{document}
+\noindent\textbf{2.37 Theorem.} If $r_1,r_2,...,r_m$ are natural numbers and each one is congruent to 1 modulo 4, then the product $r_1r_2...r_m$ is also congruent to 1 modulo 4.
+
+\bigskip
+
+\noindent\textbf{Proof.} Let $r_1,r_2,...,r_n\in\mathbb{N}$ such that any $r_i\equiv 1\pmod 4$. Let $m=2$ be our base case. By Theorem 1.14, $r_1r_2\equiv 1(1)\pmod 4$. Thus, $r_1r_2\equiv 1\pmod 4$ satisfies the theorem. Suppose any $m$ is true where $1\leq m\leq k$. By induction, we want to show $r_1r_2...r_kr_{k+1}\equiv 1\pmod 4$. From our induction hypothesis, we know up to $k$ such that $r_1r_2...r_k\equiv 1\pmod 4$. By Theorem 1.14, $r_1r_2...r_kr_{k+1}\equiv 1(1)\pmod 4$. Thus, for each natural number congruent 1 modulo 4, the product of those natural numbers are also congruent 1 modulo 4.\qed
+
+\end{document}
