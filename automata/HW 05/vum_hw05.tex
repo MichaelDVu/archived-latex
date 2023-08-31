@@ -1,0 +1,112 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, enumitem, tikz, pgf}
+\usepackage{amssymb, amsmath, graphicx, amsthm, setspace}
+\usetikzlibrary{arrows, automata, positioning}
+\usepackage[latin1]{inputenc}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{CSCI 3500 HW 5}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{April 19, 2018}  
+\rfoot[rf-even]{}
+
+\begin{document}
+	\begin{enumerate}
+		\item \quad \\%1.
+		\begin{tabular}{c c c}
+			read & pop & push \\ \hline
+			a & S & S1 \\
+			c & S & $\epsilon$ \\
+			b & 1 & $\epsilon$
+		\end{tabular}
+		
+		\bigskip
+		
+		\item %2.
+		\begin{enumerate}
+			\item \quad \\ %a.
+			\begin{tabular}{c c c}
+				read & pop & push \\ \hline
+				0 & $q_0$ & $q_1$ \\
+				1 & $q_0$ & $q_0$ \\
+				0 & $q_1$ & $q_2$ \\
+				1 & $q_1$ & $q_1$ \\
+				0 & $q_2$ & $q_0$ \\
+				1 & $q_2$ & $q_2$ \\
+				0 & $q_0$ & $\epsilon$ \\
+				1 & $q_0$ & $\epsilon$
+			\end{tabular}
+			
+			\bigskip
+			
+			\item \quad \\ %b.
+			\begin{tabular}{c c c}
+				read & pop & push \\ \hline
+				a & S & Sbb \\
+				b & S & Sb \\
+				b & S & $\epsilon$ \\
+				b & b & $\epsilon$
+			\end{tabular}
+			
+			\bigskip
+			
+			\item \quad \\ %c.
+			\begin{tabular}{c c c}
+				read & pop & push \\ \hline
+				a & S & Sb \\
+				$\epsilon$ & S & $\epsilon$ \\
+				b & b & $\epsilon$ \\
+				b & S & Sa \\
+				a & S & Sa \\
+				b & S & Sb \\
+				b & S & $\epsilon$ \\
+				a & a & $\epsilon$
+			\end{tabular}
+			
+			\bigskip
+			
+			\item \quad \\ %d.
+			\begin{tabular}{c c c}
+				read & pop & push \\ \hline
+				a & S & Sd \\
+				b & S & Sc \\
+				$\epsilon$ & S & $\epsilon$ \\
+				c & c & $\epsilon$ \\
+				d & d & $\epsilon$
+			\end{tabular}
+		\end{enumerate}
+		
+		\item \quad \\ %3.
+		\begin{tabular}{c c c}
+			read & pop & push \\ \hline
+			$\epsilon$ & S & $S_1S_2$ \\
+			$\epsilon$ & S & $S_3S_1$ \\
+			$\epsilon$ & $S_1$ & a$S_1$b \\
+			$\epsilon$ & $S_1$ & $\epsilon$ \\
+			$\epsilon$ & $S_2$ & b$S_2$ \\
+			$\epsilon$ & $S_2$ & b \\
+			$\epsilon$ & $S_3$ & a$S_3$ \\
+			$\epsilon$ &$S_3$ & a \\
+			a & a & $\epsilon$ \\
+			b & b & $\epsilon$
+		\end{tabular}
+		
+		\item %4.
+		\begin{flalign*}
+			S &\rightarrow S_1S_2S_3 \\
+			S_1 &\rightarrow aS_1b \mid \epsilon \\
+			S_2 &\rightarrow cS_2 \mid \epsilon \\
+			S_3 &\rightarrow dS_3 \mid \epsilon &&
+		\end{flalign*}
+		
+		\item %5.
+		\noindent\textbf{Prove.} $L=\{a^n b^m c^n \mid m \geq n \}$ is not context free.
+		
+		\bigskip
+		
+		\noindent\textbf{Proof.} Suppose not. That is, let $L=\{a^n b^m c^n \mid m \geq n \}$ be context free such that the pumping lemma holds for $L$. Let $k$ be given by the pumping lemma. Choose $z=a^k b^k c^k$ such that $z\in L$ and $|z| \geq k$. Let $u,v,w,x,y$ be given such that $z=uvwxy= a^k b^k c^k$, $v,x$ are not both $\epsilon$, $|vwx| \leq k$, and for all $i$, $uv^i wx^i y \in L$. Consider when $i=2$, since $v$ and $x$ cannot contain more than one type of symbol each, it follows that $|vwx| \geq k$, which contradicts our assumption that $|vwx| \leq k$. Thus, $L$ is not context free. \qed
+	\end{enumerate}
+\end{document}
