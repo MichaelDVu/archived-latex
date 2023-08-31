@@ -1,0 +1,363 @@
+\documentclass[12pt]{article}
+\author{Michael Vu}
+\title{Numerical Analysis HW 1}
+\usepackage{pdfsync} %This package allows for some communication between your pdf viewer and your latex editor, so that you can double click on a line in the pdf, for instance, and it will jump to the corresponding line in your latex code.
+
+\usepackage{amssymb, amsmath, graphicx,amsthm} %these are standard packages that I pretty much always use.
+
+\usepackage{bm,stmaryrd,verbatim,color,amsbsy}
+%\usepackage{showkeys}  %If you have trouble remembering what you labeled your equations, you can uncomment this package, and temporarily see the labels displayed.
+\usepackage{epstopdf} %Since I use Maple sometimes to make figures, and I get it to output eps files, I use this package so that eps files can be inputted into my documents. 
+%Mathematica has the ability to output figures as pdfs, which are handled automatically with the graphicx package enabled.
+
+\usepackage[normalem]{ulem} %this is a package that lets you underline, but mostly I like the \sout command for striking out.
+
+\usepackage{color} %this package lets us change the color of your font by writing something like {\color[rgb]{1,0,0} This would be red}.
+
+
+\def\red #1{{\color[rgb]{1, 0,0}#1}} %To make things easy on myself, I define a simpler function like this, so I can write \red{This would be red} instead of the above babble.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary} %These define theorem like environments.
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}} %These define various other types of math environments: definition, example, and remarks.
+
+\newcommand{\ph}{\varphi}
+
+
+
+
+
+
+\bibliographystyle{plain}
+
+
+%Some common or not so common symbols that I wanted shortcuts for.
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}{\frac{\mbox{d}}{\mbox{d}t}}
+\newcommand{\dA}{\,\mbox{d}A}
+\newcommand{\dv}{\,\mbox{d}v}
+\def\dx{\, \mbox{d} x}
+\newcommand{\ds}{\,\mbox{d}s}
+\newcommand{\dz}{\,\mbox{d}z}
+\def\dzeta{\,\mbox{d}\zeta}
+\newcommand{\dl}{\,\mbox{d}l}
+\renewcommand{\div}{\mbox{ div}}
+\newcommand{\grad}{\mbox{ grad }}
+
+
+
+
+%bold letters usually used to denote vectors matrices.
+\def\bfa{\mathbf{a}}
+\def\bfA{\mathbf{A}}
+\def\bfb{\mathbf{b}}
+\def\bfB{\mathbf{B}}
+\def\bfc{\mathbf{c}}
+\def\bfC{\mathbf{C}}
+\def\bfd{\mathbf{d}}
+\def\bfD{\mathbf{D}}
+\def\bfe{\mathbf{e}}
+\def\bfE{\mathbf{E}}
+\def\bff{\mathbf{f}}
+\def\bfF{\mathbf{F}}
+\def\bfg{\mathbf{g}}
+\def\bfG{\mathbf{G}}
+\def\bfh{\mathbf{h}}
+\def\bfH{\mathbf{H}}
+\def\bfi{\mathbf{i}}
+\def\bfI{\mathbf{I}}
+\def\bfj{\mathbf{j}}
+\def\bfJ{\mathbf{J}}
+\def\bfk{\mathbf{k}}
+\def\bfK{\mathbf{K}}
+\def\bfl{\mathbf{l}}
+\def\bfL{\mathbf{L}}
+\def\bfm{\mathbf{m}}
+\def\bfM{\mathbf{M}}
+\def\bfn{\mathbf{n}}
+\def\bfN{\mathbf{N}}
+\def\bfo{\mathbf{o}}
+\def\bfO{\mathbf{O}}
+\def\bfp{\mathbf{p}}
+\def\bfP{\mathbf{P}}
+\def\bfq{\mathbf{q}}
+\def\bfQ{\mathbf{Q}}
+\def\bfr{\mathbf{r}}
+\def\bfR{\mathbf{R}}
+\def\bfs{\mathbf{s}}
+\def\bfS{\mathbf{S}}
+\def\bft{\mathbf{t}}
+\def\bfT{\mathbf{T}}
+\def\bfu{\mathbf{u}}
+\def\bfU{\mathbf{U}}
+\def\bfv{\mathbf{v}}
+\def\bfV{\mathbf{V}}
+\def\bfw{\mathbf{w}}
+\def\bfW{\mathbf{W}}
+\def\bfx{\mathbf{x}}
+\def\bfX{\mathbf{X}}
+\def\bfy{\mathbf{y}}
+\def\bfY{\mathbf{Y}}
+\def\bfz{\mathbf{z}}
+\def\bfZ{\mathbf{Z}}
+
+
+
+%``Blackboard bold" letters \bbC is used for the complex plane, \bbN
+\def\bba{\mathbb{a}}
+\def\bbA{\mathbb{A}}
+\def\bbb{\mathbb{b}}
+\def\bbB{\mathbb{B}}
+\def\bbc{\mathbb{c}}
+\def\bbC{\mathbb{C}}
+\def\bbd{\mathbb{d}}
+\def\bbD{\mathbb{D}}
+\def\bbe{\mathbb{e}}
+\def\bbE{\mathbb{E}}
+\def\bbf{\mathbb{f}}
+\def\bbF{\mathbb{F}}
+\def\bbg{\mathbb{g}}
+\def\bbG{\mathbb{G}}
+\def\bbh{\mathbb{h}}
+\def\bbH{\mathbb{H}}
+\def\bbi{\mathbb{i}}
+\def\bbI{\mathbb{I}}
+\def\bbj{\mathbb{j}}
+\def\bbJ{\mathbb{J}}
+\def\bbk{\mathbb{k}}
+\def\bbK{\mathbb{K}}
+\def\bbl{\mathbb{l}}
+\def\bbL{\mathbb{L}}
+\def\bbm{\mathbb{m}}
+\def\bbM{\mathbb{M}}
+\def\bbn{\mathbb{n}}
+\def\bbN{\mathbb{N}}
+\def\bbo{\mathbb{o}}
+\def\bbO{\mathbb{O}}
+\def\bbp{\mathbb{p}}
+\def\bbP{\mathbb{P}}
+\def\bbq{\mathbb{q}}
+\def\bbQ{\mathbb{Q}}
+\def\bbr{\mathbb{r}}
+\def\bbR{\mathbb{R}}
+\def\bbs{\mathbb{s}}
+\def\bbS{\mathbb{S}}
+\def\bbt{\mathbb{t}}
+\def\bbT{\mathbb{T}}
+\def\bbu{\mathbb{u}}
+\def\bbU{\mathbb{U}}
+\def\bbv{\mathbb{v}}
+\def\bbV{\mathbb{V}}
+\def\bbw{\mathbb{w}}
+\def\bbW{\mathbb{W}}
+\def\bbx{\mathbb{x}}
+\def\bbX{\mathbb{X}}
+\def\bby{\mathbb{y}}
+\def\bbY{\mathbb{Y}}
+\def\bbz{\mathbb{z}}
+\def\bbZ{\mathbb{Z}}
+
+\def\ca{\mathcal{a}}
+\def\cA{\mathcal{A}}
+\def\cb{\mathcal{b}}
+\def\cB{\mathcal{B}}
+\def\cc{\mathcal{c}}
+\def\cC{\mathcal{C}}
+\def\cd{\mathcal{d}}
+\def\cD{\mathcal{D}}
+\def\ce{\mathcal{e}}
+\def\cE{\mathcal{E}}
+\def\cf{\mathcal{f}}
+\def\cF{\mathcal{F}}
+\def\cg{\mathcal{g}}
+\def\cG{\mathcal{G}}
+\def\ch{\mathcal{h}}
+\def\cH{\mathcal{H}}
+\def\ci{\mathcal{i}}
+\def\cI{\mathcal{I}}
+\def\cj{\mathcal{j}}
+\def\cJ{\mathcal{J}}
+\def\ck{\mathcal{k}}
+\def\cK{\mathcal{K}}
+\def\cl{\mathcal{l}}
+\def\cL{\mathcal{L}}
+\def\cm{\mathcal{m}}
+\def\cM{\mathcal{M}}
+\def\cn{\mathcal{n}}
+\def\cN{\mathcal{N}}
+\def\co{\mathcal{o}}
+\def\cO{\mathcal{O}}
+\def\cp{\mathcal{p}}
+\def\cP{\mathcal{P}}
+\def\cq{\mathcal{q}}
+\def\cQ{\mathcal{Q}}
+\def\calr{\mathcal{r}}
+\def\cR{\mathcal{R}}
+\def\cs{\mathcal{s}}
+\def\cS{\mathcal{S}}
+\def\ct{\mathcal{t}}
+\def\cT{\mathcal{T}}
+\def\cu{\mathcal{u}}
+\def\cU{\mathcal{U}}
+\def\cv{\mathcal{v}}
+\def\cV{\mathcal{V}}
+\def\cw{\mathcal{w}}
+\def\cW{\mathcal{W}}
+\def\cx{\mathcal{x}}
+\def\cX{\mathcal{X}}
+\def\cy{\mathcal{y}}
+\def\cY{\mathcal{Y}}
+\def\cz{\mathcal{z}}
+\def\cZ{\mathcal{Z}}
+
+%Some operators that I wanted displayed in a similar font as you would want sin and cos functions (by the way, those can be called up by using \sin,\cos,\log,\ln, \tan,\exp,\sec,\csc,\sinh,\cosh,\tanh, there are probably more.
+\DeclareMathOperator*{\sgn}{sgn}
+\DeclareMathOperator*{\spn}{span}
+\DeclareMathOperator*{\coker}{coker}
+\DeclareMathOperator*{\Id}{Id}
+\DeclareMathOperator*{\D}{D}
+\def\RR{\mathbb{R}}
+
+%more symbols that I wanted extra short commands for
+\newcommand{\be}{\mathbf{e}}
+\renewcommand{\L}{\Lambda}
+\newcommand{\vs}{\varsigma}
+\newcommand{\al}{\alpha}
+\newcommand{\s}{\sigma}
+\renewcommand{\k}{\kappa}
+\renewcommand{\t}{\theta}
+\newcommand{\w}{\omega}
+
+
+%some bold greek letters.
+\def\bfeta{\boldsymbol{\eta}}
+\def\bfxi{\boldsymbol{\xi}}
+\def\bfrho{\boldsymbol{\rho}}
+\def\bfth{\boldsymbol{\t}}
+\def\bflam{\boldsymbol{\lambda}}
+\def\bfTh{\boldsymbol{\Theta}}
+\def\bfnu{\boldsymbol{\nu}}
+
+%some more commands
+\newcommand{\drho}{\,{\rm d} \rho}
+\newcommand{\dth}{\,{\rm d} \t}
+\newcommand{\tilu}{\tilde{u}}
+\newcommand{\vt}{\vartheta}
+
+
+
+%All the stuff above is more or less the same for all my documents, of course this gives rise to vestigial parts, which should be eventually eliminated, but I'm sure people carry around pointless code for decades without noticing.
+
+\begin{document} %This is where the document actually begins
+
+
+\maketitle %Obviously this makes the title for you. It gathers the information I put at the top of the document (so it's easy to find and modify), like \author, \date, \title, etc.
+
+\textbf{Problem 1.} In the case of the divergent series, $\sum\limits_{i=1}^\infty\frac{1}{i}$, my plan is to write a loop to compute this series, however, since computers tend to disagree with infinity, I will choose an arbitrary upper limit. I am going to assume, because this is a divergent series, I am only going to need to compute a relatively small amount of terms to see discrepancies compared to computing the arithmetic by hand. My source code follows:
+
+\begin{verbatim}
+program pr1
+real :: s
+integer :: n, i 
+
+s = 0.0
+i = 1
+n = 5
+
+do while (i <= n)
+s = s + 1.0/float(i)
+print *, i, s
+i = i + 1
+end do
+
+end program pr1
+\end{verbatim}
+
+Compiling and running this program created what appears to be rounding errors when compared to manual computations. Here are the computations as $i=1\rightarrow 5$:
+
+\begin{verbatim}
+1   1.00000000
+2   1.50000000
+3   1.83333337
+4   2.08333349
+5   2.28333354
+\end{verbatim}
+
+Here we find that when the value should be a decimal with $3$ repeating, the program rounds off in a seemingly incomprehensible way. 
+
+\bigskip
+\textbf{Problem 2.} In this problem, my goal is to create a program that establishes two points with arbitrary distance, compute the mid point, establish the mid point as the new left or right limit, compute the new mid point, and continue this loop until the program says otherwise. I will keep things consistent and create two scenarios, one where the mid point becomes the new right limit, and the other where the mid point becomes the new left limit. The code is as follows:
+
+\begin{verbatim}
+program pr2
+real :: a, b, m
+integer :: i 
+
+a = 0.0
+b = 10.0
+i = 0
+
+print *, "(a < m)"
+do while (a < m)
+i = i + 1
+m = (a + b)/2.0
+b = m
+print *, i, m
+end do
+
+a = 0.0
+b = 10.0
+i = 0
+
+print *, "(b > m)"
+do while (b > m)
+i = i + 1
+m = (a + b)/2.0
+a = m
+print *, i, m
+end do
+
+end program pr2
+\end{verbatim}
+
+After compiling and running the program, we find both scenarios end in similar fashion. I'll display the first and last five lines to each scenario:
+
+\begin{verbatim}
+(a < m) (this is when midpoint becomes new right side)
+1   5.00000000
+2   2.50000000
+3   1.25000000
+4   0.625000000
+5   0.312500000
+					
+149   1.40129846E-44
+150   7.00649232E-45
+151   2.80259693E-45
+152   1.40129846E-45
+153   0.00000000
+
+(b > m) (this is when midpoint becomes new left side)
+1   5.00000000
+2   7.50000000
+3   8.75000000
+4   9.37500000
+5   9.68750000
+					
+20   9.99999046
+21   9.99999523
+22   9.99999809
+23   9.99999905
+24   10.0000000
+\end{verbatim}
+
+We find that the program can only compute to a certain precision before it cannot distinguish between $m$ and the other limit that $m$ is getting closer to. I also found that if the outer limit is any number other than $0$, the program averages 29 computations before it terminates, whereas the average is significantly higher for an outer limit of $0$, with 154 computations.
+
+\end{document}

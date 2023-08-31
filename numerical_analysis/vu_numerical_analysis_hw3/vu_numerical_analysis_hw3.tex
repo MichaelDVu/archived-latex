@@ -1,0 +1,497 @@
+\documentclass[12pt]{article}
+\author{Michael Vu}
+\title{Numerical Analysis HW 3}
+\usepackage{pdfsync} %This package allows for some communication between your pdf viewer and your latex editor, so that you can double click on a line in the pdf, for instance, and it will jump to the corresponding line in your latex code.
+
+\usepackage{amssymb, amsmath, graphicx,amsthm} %these are standard packages that I pretty much always use.
+
+\usepackage{bm,stmaryrd,verbatim,color,amsbsy}
+%\usepackage{showkeys}  %If you have trouble remembering what you labeled your equations, you can uncomment this package, and temporarily see the labels displayed.
+\usepackage{epstopdf} %Since I use Maple sometimes to make figures, and I get it to output eps files, I use this package so that eps files can be inputted into my documents. 
+%Mathematica has the ability to output figures as pdfs, which are handled automatically with the graphicx package enabled.
+
+\usepackage[normalem]{ulem} %this is a package that lets you underline, but mostly I like the \sout command for striking out.
+
+\usepackage{color} %this package lets us change the color of your font by writing something like {\color[rgb]{1,0,0} This would be red}.
+
+
+
+
+\def\red #1{{\color[rgb]{1, 0,0}#1}} %To make things easy on myself, I define a simpler function like this, so I can write \red{This would be red} instead of the above babble.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary} %These define theorem like environments.
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}} %These define various other types of math environments: definition, example, and remarks.
+
+\newcommand{\ph}{\varphi}
+
+
+
+
+
+
+\bibliographystyle{plain}
+
+
+%Some common or not so common symbols that I wanted shortcuts for.
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ddt}{\frac{\mbox{d}}{\mbox{d}t}}
+\newcommand{\dA}{\,\mbox{d}A}
+\newcommand{\dv}{\,\mbox{d}v}
+\def\dx{\, \mbox{d} x}
+\newcommand{\ds}{\,\mbox{d}s}
+\newcommand{\dz}{\,\mbox{d}z}
+\def\dzeta{\,\mbox{d}\zeta}
+\newcommand{\dl}{\,\mbox{d}l}
+\renewcommand{\div}{\mbox{ div}}
+\newcommand{\grad}{\mbox{ grad }}
+
+
+
+
+%bold letters usually used to denote vectors matrices.
+\def\bfa{\mathbf{a}}
+\def\bfA{\mathbf{A}}
+\def\bfb{\mathbf{b}}
+\def\bfB{\mathbf{B}}
+\def\bfc{\mathbf{c}}
+\def\bfC{\mathbf{C}}
+\def\bfd{\mathbf{d}}
+\def\bfD{\mathbf{D}}
+\def\bfe{\mathbf{e}}
+\def\bfE{\mathbf{E}}
+\def\bff{\mathbf{f}}
+\def\bfF{\mathbf{F}}
+\def\bfg{\mathbf{g}}
+\def\bfG{\mathbf{G}}
+\def\bfh{\mathbf{h}}
+\def\bfH{\mathbf{H}}
+\def\bfi{\mathbf{i}}
+\def\bfI{\mathbf{I}}
+\def\bfj{\mathbf{j}}
+\def\bfJ{\mathbf{J}}
+\def\bfk{\mathbf{k}}
+\def\bfK{\mathbf{K}}
+\def\bfl{\mathbf{l}}
+\def\bfL{\mathbf{L}}
+\def\bfm{\mathbf{m}}
+\def\bfM{\mathbf{M}}
+\def\bfn{\mathbf{n}}
+\def\bfN{\mathbf{N}}
+\def\bfo{\mathbf{o}}
+\def\bfO{\mathbf{O}}
+\def\bfp{\mathbf{p}}
+\def\bfP{\mathbf{P}}
+\def\bfq{\mathbf{q}}
+\def\bfQ{\mathbf{Q}}
+\def\bfr{\mathbf{r}}
+\def\bfR{\mathbf{R}}
+\def\bfs{\mathbf{s}}
+\def\bfS{\mathbf{S}}
+\def\bft{\mathbf{t}}
+\def\bfT{\mathbf{T}}
+\def\bfu{\mathbf{u}}
+\def\bfU{\mathbf{U}}
+\def\bfv{\mathbf{v}}
+\def\bfV{\mathbf{V}}
+\def\bfw{\mathbf{w}}
+\def\bfW{\mathbf{W}}
+\def\bfx{\mathbf{x}}
+\def\bfX{\mathbf{X}}
+\def\bfy{\mathbf{y}}
+\def\bfY{\mathbf{Y}}
+\def\bfz{\mathbf{z}}
+\def\bfZ{\mathbf{Z}}
+
+
+
+%``Blackboard bold" letters \bbC is used for the complex plane, \bbN
+\def\bba{\mathbb{a}}
+\def\bbA{\mathbb{A}}
+\def\bbb{\mathbb{b}}
+\def\bbB{\mathbb{B}}
+\def\bbc{\mathbb{c}}
+\def\bbC{\mathbb{C}}
+\def\bbd{\mathbb{d}}
+\def\bbD{\mathbb{D}}
+\def\bbe{\mathbb{e}}
+\def\bbE{\mathbb{E}}
+\def\bbf{\mathbb{f}}
+\def\bbF{\mathbb{F}}
+\def\bbg{\mathbb{g}}
+\def\bbG{\mathbb{G}}
+\def\bbh{\mathbb{h}}
+\def\bbH{\mathbb{H}}
+\def\bbi{\mathbb{i}}
+\def\bbI{\mathbb{I}}
+\def\bbj{\mathbb{j}}
+\def\bbJ{\mathbb{J}}
+\def\bbk{\mathbb{k}}
+\def\bbK{\mathbb{K}}
+\def\bbl{\mathbb{l}}
+\def\bbL{\mathbb{L}}
+\def\bbm{\mathbb{m}}
+\def\bbM{\mathbb{M}}
+\def\bbn{\mathbb{n}}
+\def\bbN{\mathbb{N}}
+\def\bbo{\mathbb{o}}
+\def\bbO{\mathbb{O}}
+\def\bbp{\mathbb{p}}
+\def\bbP{\mathbb{P}}
+\def\bbq{\mathbb{q}}
+\def\bbQ{\mathbb{Q}}
+\def\bbr{\mathbb{r}}
+\def\bbR{\mathbb{R}}
+\def\bbs{\mathbb{s}}
+\def\bbS{\mathbb{S}}
+\def\bbt{\mathbb{t}}
+\def\bbT{\mathbb{T}}
+\def\bbu{\mathbb{u}}
+\def\bbU{\mathbb{U}}
+\def\bbv{\mathbb{v}}
+\def\bbV{\mathbb{V}}
+\def\bbw{\mathbb{w}}
+\def\bbW{\mathbb{W}}
+\def\bbx{\mathbb{x}}
+\def\bbX{\mathbb{X}}
+\def\bby{\mathbb{y}}
+\def\bbY{\mathbb{Y}}
+\def\bbz{\mathbb{z}}
+\def\bbZ{\mathbb{Z}}
+
+\def\ca{\mathcal{a}}
+\def\cA{\mathcal{A}}
+\def\cb{\mathcal{b}}
+\def\cB{\mathcal{B}}
+\def\cc{\mathcal{c}}
+\def\cC{\mathcal{C}}
+\def\cd{\mathcal{d}}
+\def\cD{\mathcal{D}}
+\def\ce{\mathcal{e}}
+\def\cE{\mathcal{E}}
+\def\cf{\mathcal{f}}
+\def\cF{\mathcal{F}}
+\def\cg{\mathcal{g}}
+\def\cG{\mathcal{G}}
+\def\ch{\mathcal{h}}
+\def\cH{\mathcal{H}}
+\def\ci{\mathcal{i}}
+\def\cI{\mathcal{I}}
+\def\cj{\mathcal{j}}
+\def\cJ{\mathcal{J}}
+\def\ck{\mathcal{k}}
+\def\cK{\mathcal{K}}
+\def\cl{\mathcal{l}}
+\def\cL{\mathcal{L}}
+\def\cm{\mathcal{m}}
+\def\cM{\mathcal{M}}
+\def\cn{\mathcal{n}}
+\def\cN{\mathcal{N}}
+\def\co{\mathcal{o}}
+\def\cO{\mathcal{O}}
+\def\cp{\mathcal{p}}
+\def\cP{\mathcal{P}}
+\def\cq{\mathcal{q}}
+\def\cQ{\mathcal{Q}}
+\def\calr{\mathcal{r}}
+\def\cR{\mathcal{R}}
+\def\cs{\mathcal{s}}
+\def\cS{\mathcal{S}}
+\def\ct{\mathcal{t}}
+\def\cT{\mathcal{T}}
+\def\cu{\mathcal{u}}
+\def\cU{\mathcal{U}}
+\def\cv{\mathcal{v}}
+\def\cV{\mathcal{V}}
+\def\cw{\mathcal{w}}
+\def\cW{\mathcal{W}}
+\def\cx{\mathcal{x}}
+\def\cX{\mathcal{X}}
+\def\cy{\mathcal{y}}
+\def\cY{\mathcal{Y}}
+\def\cz{\mathcal{z}}
+\def\cZ{\mathcal{Z}}
+
+%Some operators that I wanted displayed in a similar font as you would want sin and cos functions (by the way, those can be called up by using \sin,\cos,\log,\ln, \tan,\exp,\sec,\csc,\sinh,\cosh,\tanh, there are probably more.
+\DeclareMathOperator*{\sgn}{sgn}
+\DeclareMathOperator*{\spn}{span}
+\DeclareMathOperator*{\coker}{coker}
+\DeclareMathOperator*{\Id}{Id}
+\DeclareMathOperator*{\D}{D}
+\def\RR{\mathbb{R}}
+
+%more symbols that I wanted extra short commands for
+\newcommand{\be}{\mathbf{e}}
+\renewcommand{\L}{\Lambda}
+\newcommand{\vs}{\varsigma}
+\newcommand{\al}{\alpha}
+\newcommand{\s}{\sigma}
+\renewcommand{\k}{\kappa}
+\renewcommand{\t}{\theta}
+\newcommand{\w}{\omega}
+
+
+%some bold greek letters.
+\def\bfeta{\boldsymbol{\eta}}
+\def\bfxi{\boldsymbol{\xi}}
+\def\bfrho{\boldsymbol{\rho}}
+\def\bfth{\boldsymbol{\t}}
+\def\bflam{\boldsymbol{\lambda}}
+\def\bfTh{\boldsymbol{\Theta}}
+\def\bfnu{\boldsymbol{\nu}}
+
+\newcommand{\drho}{\,{\rm d} \rho}
+\newcommand{\dth}{\,{\rm d} \t}
+\newcommand{\tilu}{\tilde{u}}
+\newcommand{\vt}{\vartheta}
+
+
+\begin{document}
+
+\maketitle 
+
+\textbf{Problem 1.} Reflecting upon bisection, one of its biggest pitfalls in machine computation, is its inability to distinguish or compare itself to another number when both numbers are extremely small. In theory, the program should run for an infinite amount of time, but this is not the case. We find that computations end after about 24 iterations because the machine could not differentiate between such small numbers and it assumes the numbers are the same. 
+
+\bigskip
+
+\textbf{Problem 2.} As we look to solve $f(x)=x^3-9$, using bisection on the interval $[2,3]$, we find that trying to obtain $x$ when the successive midpoints differ by less than $10^{-9}$ to be quite difficult with single precision units. 
+Below is a code for a single precision Fortran program using bisection to solve for $f(x)$ (note: because of the cons of bisection as noted in problem 1, there is also a check within the loop for tolerance):
+
+\begin{verbatim}
+program hw3pr2pt1
+real :: a, b, m(30), f
+integer :: i 
+
+a = 2.0
+b = 3.0
+
+do i = 1, 30 
+	m(i) = (a + b)/2.0
+	if(f(a)*f(m(i)) < 0.0)then
+		b = m(i)
+	else
+		a = m(i)
+	end if
+	print*, i, m(i), abs(m(i)-m(i-1))
+	
+	if(f(a) == f(m(i)))then
+		print*, 'You have met the tolerance of single precision'
+	end if 
+end do
+
+end program
+
+real function f(x)
+real :: x
+
+f = x**3 - 9
+
+return
+end
+\end{verbatim}
+
+Here are a few lines from the beginning and end of the output:
+
+\begin{verbatim}
+1   2.50000000       2.50000000
+2   2.25000000      0.250000000
+3   2.12500000      0.125000000
+4   2.06250000       6.25000000E-02
+You have met the tolerance of single precision
+5   2.09375000       3.12500000E-02
+.
+.
+.
+19   2.08008385       1.90734863E-06
+20   2.08008289       9.53674316E-07
+You have met the tolerance of single precision
+21   2.08008337       4.76837158E-07
+You have met the tolerance of single precision
+22   2.08008361       2.38418579E-07
+You have met the tolerance of single precision
+23   2.08008385       2.38418579E-07
+24   2.08008385       0.00000000
+\end{verbatim}
+
+We find $x=2.08008385$ and differences in successive midpoints with precision of about $10^{-7}$ which is less than the $10^{-9}$ precision prescribed in the assignment. The most probably cause of this ``lack'' of precision is because of the single precision units. Also observe the warning that is given about tolerance. The program found instances where $f(a)f(m(i))=0$, cause by multiply two extremely small values that it considered to be 0 (although it did not affect finding the correct answer). Next we will look at the same program with double precision units instead (again, syntax has been implemented to catch tolerance issues with bisection):
+
+\begin{verbatim}
+program hw3pr2pt2
+double precision :: a, b, m(30), f
+integer :: i 
+
+a = 2.0d0
+b = 3.0d0
+
+do i = 1, 30 
+	m(i) = (a + b)/2.0d0
+	if(f(a)*f(m(i)) < 0.0d0)then
+		b = m(i)
+	else
+		a = m(i)
+	end if
+	print*, i, m(i), abs(m(i)-m(i-1))
+	
+	if(f(a) == f(m(i)))then
+		print*, 'You have met the tolerance of double precision'
+	end if 	
+end do
+
+end program
+
+double precision function f(x)
+double precision :: x
+
+f = x**3.0d0 - 9.0d0
+
+return
+end
+\end{verbatim}
+
+After running the program, the first and last few output lines are as follows:
+
+\begin{verbatim}
+1   2.5000000000000000        2.5000000000000000
+2   2.2500000000000000       0.25000000000000000
+3   2.1250000000000000       0.12500000000000000
+4   2.0625000000000000        6.2500000000000000E-002
+You have met the tolerance of double precision
+5   2.0937500000000000        3.1250000000000000E-002
+.
+.
+.
+26   2.0800838321447372        1.4901161193847656E-008
+27   2.0800838246941566        7.4505805969238281E-009
+28   2.0800838209688663        3.7252902984619141E-009
+You have met the tolerance of double precision
+29   2.0800838228315115        1.8626451492309570E-009
+You have met the tolerance of double precision
+30   2.0800838237628341        9.3132257461547852E-010
+\end{verbatim}
+
+Now we find $x=2.0800838237628341$ and successive midpoints to differ with precision greater than $10^{-9}$. This shows how important choosing the correct precision based on allowable tolerances. We also find there are instances when tolerances of bisection are met when choosing new end points for subintervals. We know to set the midpoint as the new right limit when $f(a)f(m(i))<0$ or as the left limit when $f(a)f(m(i))>0$. The problem with this, as mentioned earlier, is when the two resulting values of the function as so small, whether negative or positive, the machine considers them both 0, and the resulting product is 0. This may become problematic when deciding which side limit to assign the midpoint. In our case, it did not affect the final result and the correct $x$ is achieved. The book mentions another method to compare the two functions by using the signum function.
+
+\bigskip
+
+\textbf{Problem 3.} The textbook says $m=a+\frac{b-a}{2}$ is equivalent to $m=\frac{a+b}{2}$. Simple check by adding the terms verifies this. Using algebra we find:
+
+\begin{equation*}
+\begin{align}
+m &= a+\frac{b-a}{2}\\
+&= \frac{2}{2}(a)+\frac{b-a}{2}\\
+&= \frac{2a}{2}+\frac{b-a}{2}\\
+&= \frac{2a+b-a}{2}\\
+&= \frac{a+b}{2}\\
+\end{align}
+\end{equation*}
+
+Included is the code for the same function as in problem 2, except $m=a+\frac{b-a}{2}$ is used to compute the midpoint:
+
+\begin{verbatim}
+program hw3pr3
+double precision :: a, b, m(30), f
+integer :: i 
+
+a = 2.0d0
+b = 3.0d0
+
+do i = 1, 30 
+	m(i) = a + (b - a)/2.0d0
+	if(f(a)*f(m(i)) < 0.0d0)then
+		b = m(i)
+	else
+		a = m(i)
+	end if
+	print*, i, m(i), abs(m(i)-m(i-1))
+	if(f(a) == f(m(i)))then
+		print*, 'You have met the tolerance of double precision'
+	end if
+end do
+
+end program
+
+double precision function f(x)
+double precision :: x
+
+f = x**3.0d0 - 9.0d0
+
+return
+end
+\end{verbatim}
+
+After running the program and comparing the output to the previous problem, we find the results, including tolerance issues, to be exactly the same. Here are the first and last few lines of the output:
+
+\begin{verbatim}
+1   2.5000000000000000        2.5000000000000000
+2   2.2500000000000000       0.25000000000000000
+3   2.1250000000000000       0.12500000000000000
+4   2.0625000000000000        6.2500000000000000E-002
+You have met the tolerance of double precision
+5   2.0937500000000000        3.1250000000000000E-002
+.
+.
+.
+26   2.0800838321447372        1.4901161193847656E-008
+27   2.0800838246941566        7.4505805969238281E-009
+28   2.0800838209688663        3.7252902984619141E-009
+You have met the tolerance of double precision
+29   2.0800838228315115        1.8626451492309570E-009
+You have met the tolerance of double precision
+30   2.0800838237628341        9.3132257461547852E-010
+\end{verbatim}
+
+In conclusion, we observe the behavior not to change at all.
+
+\bigskip
+
+\textbf{Problem 4.} On page 44 of our textbook, problem 17 asks us to find a solution for the given equation:
+
+\begin{equation*}
+x(t)=\frac{g}{2\omega^2}-\left(\frac{e^{\omega t}-e^{-\omega t}}{2}-\sin\omega t\right)
+\end{equation*}
+
+We are given $g=-32.17$ ft/s$^2$ and $t=1$ second moves the particle 1.7 ft. Plugging in these values and setting the resulting equation to 0, we find:
+
+\begin{equation*}
+x(w)=-32.17\left(\frac{e^{\omega}-e^{-\omega}}{2}-\sin\omega\right)-3.4\omega^2
+\end{equation*}
+
+Now that the function only depends on $\omega$, we can implement the secant method to find $\omega$ such that the function equals 0. This is the code used to find $\omega$ by establishing an interval of $[-1,1]$:
+
+\begin{verbatim}
+program hw3pr4
+implicit none
+double precision :: p(30), f
+integer :: i 
+
+p(1) = -1.0d0
+p(2) = 1.0d0
+
+do i = 2, 30
+	p(i+1) = p(i) - (f(p(i))*(p(i)-p(i-1)))/( f(p(i))-f(p(i-1)))
+	print*, i, p(i), abs(p(i+1)-p(i)), f(p(i))
+end do 
+
+end program
+
+double precision function f(w)
+implicit none
+double precision :: w
+
+f = -32.17d0*((dexp(w)-dexp(-w))/2.0d0 - sin(w))-3.4d0*w**2
+
+return
+end
+\end{verbatim}
+
+The resulting output of $p_{14}$ gives us $\omega=-0.31706177453108753$ and successive $p_{i}$ with differences of $10^{-17}$ which is greater than the prescribed $10^{-10}$. We find that starting on the interval $[-1,1]$ requires at least $p_{7}$ to meet the required difference precision. 
+
+\end{document}
