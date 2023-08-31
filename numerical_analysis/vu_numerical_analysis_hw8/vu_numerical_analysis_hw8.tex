@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{underscore}
 
 \title{Numerical Analysis HW 8}
 \author{Michael Vu}
@@ -210,18 +211,16 @@
 	
 	I then ran the output file Gplot in gnuplot and here are a few shots of the graph:
 	
-	\begin{figure}[h]
-		\centering
-			\includegraphics[width=0.75\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr1graphs/pr1_1.png}
-		\label{fig:pr1_1}
-	\end{figure}
+	\begin{center}
+		\includegraphics[width=0.75\textwidth]{pr1_1.png}
+	\end{center}
 		
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr1graphs/pr1_2.png}
+		\includegraphics[width=0.75\textwidth]{pr1_2.png}
 	\end{center}
 	
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr1graphs/pr1_3.png}
+		\includegraphics[width=0.75\textwidth]{pr1_3.png}
 	\end{center}
 	
 	\newpage
@@ -229,11 +228,17 @@
 	
 	\begin{equation*}
 		\frac{u_{i-1,j}-2u_{i,j}+u_{i+1,j}}{\Delta^2}+\frac{u_{i,j-1}-2u_{i,j}+u_{i,j+1}}{\Delta^2}-u_{i,j}=f_{i,j}\\
-		
+	\end{equation*}
+	
+	\begin{equation*}	
 		u_{i-1,j}-2u_{i,j}+u_{i+1,j}+u_{i,j-1}-2u{i,j}+u_{i,j+1}-\Delta^2u_{i,j}=\Delta^2f_{i,j}\\
-		
+	\end{equation*}
+	
+	\begin{equation*}	
 		(-4-\Delta^2)u_{i,j}=\Delta^2f_{i,j}-u_{i-1,j}-u_{i+1,j}-u_{i,j-1}-u_{i,j+1}\\
-		
+	\end{equation*}
+	
+	\begin{equation*}	
 		u_{i,j}=\frac{\Delta^2f_{i,j}-u_{i-1,j}-u_{i+1,j}-u_{i,j-1}-u_{i,j+1}}{-4-\Delta^2}
 	\end{equation*}
 	
@@ -291,15 +296,15 @@
 	I then ran the output file Gplot through gnuplot, and here are a few pictures of the graph:
 		
 	\begin{center}
-		\includegraphics[width=0.70\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr3graphs/pr3_1.png}
+		\includegraphics[width=0.70\textwidth]{pr3_1.png}
 	\end{center}
 		
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr3graphs/pr3_2.png}
+		\includegraphics[width=0.75\textwidth]{pr3_2.png}
 	\end{center}
 		
 	\begin{center}
-		\includegraphics[width=0.75\textwidth]{C:/Users/Michael/Dropbox/NumericalAnalysis/HW08_FINAL/pr3graphs/pr3_3.png}
+		\includegraphics[width=0.75\textwidth]{pr3_3.png}
 	\end{center}
 
 
