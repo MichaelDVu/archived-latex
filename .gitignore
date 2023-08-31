@@ -1,0 +1,2 @@
+# ignore additional files created when compiling .tex files
+*.synctex.gz
