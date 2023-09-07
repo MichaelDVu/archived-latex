@@ -1,0 +1,749 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, enumitem, tikz, pgf, mathtools}
+\usepackage{amssymb, amsmath, graphicx, amsthm, setspace}
+\usetikzlibrary{arrows, automata, positioning}
+\usepackage[latin1]{inputenc}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{CSCI 3603 HW 2}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{February 15, 2018}  
+\rfoot[rf-even]{}
+
+\begin{document}
+	\begin{enumerate}
+	\item 
+		\begin{enumerate}
+		\item 
+			\begin{align*}
+			\text{keystream: }10010100&\\
+			\underline{\text{plaintext: }01100001}&\\
+			\text{stream cipher: }11110101&
+			\end{align*}
+		
+		\item 
+			\begin{align*}
+			\text{keystream: }10010100&\\
+			\underline{\text{plaintext: }01110000}&\\
+			\text{stream cipher: }11100100&
+			\end{align*}
+		
+		\item 
+			\begin{align*}
+			\text{keystream: }10010100&\\
+			\underline{\text{plaintext: }01110011}&\\
+			\text{stream cipher: }11100111&
+			\end{align*}
+		
+		\item 
+			\begin{align*}
+			\text{keystream: }10010100&\\
+			\underline{\text{plaintext: }01110101}&\\
+			\text{stream cipher: }11100001&
+			\end{align*}
+		\end{enumerate}
+		
+	\item
+		\begin{enumerate}
+		\item
+			\begin{align*}
+				S_1(x_1=000000) \oplus S_1(x_2=000001) &\not= S_1(x_1=000000 \oplus x_2=000001)\\
+				14_{(10)} \oplus 00_{(10)} &\not= S_1(000001)\\
+				1110_{(2)} \oplus 0000_{(2)} &\not= 00_{(10)}\\
+				1110_{(2)} &\not= 0000_{(2)}
+			\end{align*}
+		\item
+			\begin{align*}
+				S_1(x_1=111111) \oplus S_1(x_2=100000) &\not= S_1(x_1=111111 \oplus x_2=100000)\\
+				13_{(10)} \oplus 04_{(10)} &\not= S_1(011111)\\
+				1101_{(2)} \oplus 0100_{(2)} &\not= 08_{(10)}\\
+				1001_{(2)} &\not= 1000_{(2)}
+			\end{align*}
+		\item
+			\begin{align*}
+				S_1(x_1=101010) \oplus S_1(x_2=010101) &\not= S_1(x_1=101010 \oplus x_2=010101)\\
+				06_{(10)} \oplus 12_{(10)} &\not= S_1(111111)\\
+				0110_{(2)} \oplus 1100_{(2)} &\not= 13_{(10)}\\
+				1010_{(2)} &\not= 1101_{(2)}
+			\end{align*}
+		\end{enumerate}
+		
+	\item
+		\begin{enumerate}
+		\item Showing my steps:
+			\begin{enumerate}
+			\item			
+				\[
+				\stackrel{\mbox{plaintext (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{key (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\[
+				\stackrel{\mbox{plaintext after $IP$ (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Key after $PC-1$ (56-bit)
+				\[
+				\stackrel{\mbox{$C_0$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{$D_0$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Since this is round 1, rotate both halves LEFT one bit
+				\[
+				\stackrel{\mbox{$C_0$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{$D_0$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Stack the halves such that $C_0$ is on top of $D_0$. Permute $PC-2$
+				\[
+				\stackrel{\mbox{$C_0, D_0$ (56-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}\quad
+				\xRightarrow{PC-2}\quad
+				\stackrel{\mbox{$k_1$ (48-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0
+					\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Creating the $f$-Function.\\
+				\begin{enumerate}				
+				\item
+					Take $R_0$ (32-bit) and expansion permute $E$
+					\[
+					\stackrel{\mbox{$E_1(R_0)$ (48-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0
+					\end{matrix}}
+					\]
+					
+				\item
+					Compute $E_1(R_0) \oplus k_1$ to obtain another 48-bit
+					\[
+					\begin{matrix}
+						0&0&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0
+					\end{matrix}
+					\]
+					
+				\item
+					Process each row $r_i$ of matrix in previous step in $S_i$ for another 32-bit
+					\begin{align*}
+					S_1 &= 1110\\
+					S_2 &= 1111\\
+					S_3 &= 1010\\
+					S_4 &= 0111\\
+					S_5 &= 0010\\
+					S_6 &= 1100\\
+					S_7 &= 0100\\
+					S_8 &= 1101
+					\end{align*}
+					
+				\item
+					Send previous step's 32-bit to permutation $P$ for \\
+					$f$-Function (32-bit)
+					\[
+					\stackrel{\mbox{$S$ box results (32-bit)}}{
+					\begin{matrix}
+						1&1&1&0\\
+						1&1&1&1\\
+						1&0&1&0\\
+						0&1&1&1\\
+						0&0&1&0\\
+						1&1&0&0\\
+						0&1&0&0\\
+						1&1&0&1
+					\end{matrix}}
+					\xRightarrow{\quad P\quad}\quad\quad
+					\stackrel{\mbox{$f$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&1&1&0&0\\
+						1&1&0&1&1&0&0&0\\
+						1&1&0&1&1&0&1&1\\
+						1&0&1&1&1&1&0&0
+					\end{matrix}}
+					\]
+				\end{enumerate}
+				
+			\newpage\item
+				\quad\\
+				\[
+				\stackrel{\mbox{$L_0$ (32-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}
+				\quad\oplus\quad
+					\stackrel{\mbox{$f$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&1&1&0&0\\
+						1&1&0&1&1&0&0&0\\
+						1&1&0&1&1&0&1&1\\
+						1&0&1&1&1&1&0&0
+					\end{matrix}}
+				\]
+				
+				The resulting operation is $R_1$
+				\[
+				\stackrel{\mbox{$R_1$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&1&1&0&0\\
+						1&1&0&1&1&0&0&0\\
+						1&1&0&1&1&0&1&1\\
+						1&0&1&1&1&1&0&0
+					\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Thus, our output after the first round is
+				\[
+				\stackrel{\mbox{$L_1$ (32-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}\quad\quad\quad\quad
+					\stackrel{\mbox{$R_1$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&1&1&0&0\\
+						1&1&0&1&1&0&0&0\\
+						1&1&0&1&1&0&1&1\\
+						1&0&1&1&1&1&0&0
+					\end{matrix}}
+				\]
+			
+			\end{enumerate}
+		\item Showing my steps:
+			\begin{enumerate}
+			\item
+				\[
+				\stackrel{\mbox{plaintext (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					1&0&0&0&0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{key (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\[
+				\stackrel{\mbox{plaintext after $IP$ (64-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					1&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Key after $PC-1$ (56-bit)
+				\[
+				\stackrel{\mbox{$C_0$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{$D_0$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Since this is round 1, rotate both halves LEFT one bit
+				\[
+				\stackrel{\mbox{$C_0$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+				\stackrel{\mbox{$D_0$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Stack the halves such that $C_0$ is on top of $D_0$. Permute $PC-2$
+				\[
+				\stackrel{\mbox{$C_0, D_0$ (56-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}\quad
+				\xRightarrow{PC-2}\quad
+				\stackrel{\mbox{$k_1$ (48-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0
+					\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Creating the $f$-Function.\\
+				\begin{enumerate}				
+				\item
+					Take $R_0$ (32-bit) and expansion permute $E$
+					\[
+					\stackrel{\mbox{$R_0$ (32-bit)}}{
+					\begin{matrix}
+						1&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}\quad
+					\xRightarrow{\quad E\quad}\quad
+					\stackrel{\mbox{$E_1(R_0)$ (48-bit)}}{
+					\begin{matrix}
+						0&1&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&1
+					\end{matrix}}
+					\]
+					
+				\item
+					Compute $E_1(R_0) \oplus k_1$ to obtain another 48-bit
+					\[
+					\stackrel{\mbox{$E_1(R_0)$ (48-bit)}}{
+					\begin{matrix}
+						0&1&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&1
+					\end{matrix}}
+					\quad\oplus\quad
+					\stackrel{\mbox{$k_1$ (48-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0
+					\end{matrix}}
+					\]
+					The resulting 48-bits are
+					\[
+					\begin{matrix}
+						0&1&0&0&0&0\\ 
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&0\\
+						0&0&0&0&0&1
+					\end{matrix}
+					\]
+				
+				\newpage\item
+					Process each row $r_i$ of matrix in previous step in $S_i$ for another 32-bit
+					\begin{align*}
+					S_1 &= 0011\\
+					S_2 &= 1111\\
+					S_3 &= 1010\\
+					S_4 &= 0111\\
+					S_5 &= 0010\\
+					S_6 &= 1100\\
+					S_7 &= 0100\\
+					S_8 &= 0001
+					\end{align*}
+					
+				\item
+					Send previous step's 32-bit to permutation $P$ for \\
+					$f$-Function (32-bit)
+					\[
+					\stackrel{\mbox{$S$ box results (32-bit)}}{
+					\begin{matrix}
+						0&0&1&1\\
+						1&1&1&1\\
+						1&0&1&0\\
+						0&1&1&1\\
+						0&0&1&0\\
+						1&1&0&0\\
+						0&1&0&0\\
+						0&0&0&1
+					\end{matrix}}
+					\xRightarrow{\quad P\quad}\quad\quad
+					\stackrel{\mbox{$f$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&0&1&0&0\\
+						0&1&0&1&1&0&0&0\\
+						0&1&0&1&1&0&1&1\\
+						1&0&0&1&1&1&1&0
+					\end{matrix}}
+					\]
+				\end{enumerate}
+			\item
+				\quad\\
+				\[
+				\stackrel{\mbox{$L_0$ (32-bit)}}{
+					\begin{matrix}
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}
+				\quad\oplus\quad
+					\stackrel{\mbox{$f$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&0&1&0&0\\
+						0&1&0&1&1&0&0&0\\
+						0&1&0&1&1&0&1&1\\
+						1&0&0&1&1&1&1&0
+					\end{matrix}}
+				\]
+				
+				The resulting operation is $R_1$
+				\[
+				\stackrel{\mbox{$R_1$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&0&1&0&0\\
+						0&1&0&1&1&0&0&0\\
+						0&1&0&1&1&0&1&1\\
+						1&0&0&1&1&1&1&0
+					\end{matrix}}
+				\]
+				
+			\item
+				\quad\\
+				Thus, our output after the first round is
+				\[
+				\stackrel{\mbox{$L_1$ (32-bit)}}{
+					\begin{matrix}
+						1&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0\\
+						0&0&0&0&0&0&0&0
+					\end{matrix}}\quad\quad\quad\quad
+					\stackrel{\mbox{$R_1$ (32-bit)}}{
+					\begin{matrix}
+						1&1&0&1&0&1&0&0\\
+						0&1&0&1&1&0&0&0\\
+						0&1&0&1&1&0&1&1\\
+						1&0&0&1&1&1&1&0
+					\end{matrix}}
+				\]
+			\end{enumerate}
+			There are 6 different bits compared to part (a). The bits are different at positions $L_1=1$ and $R_1 = 5,9,17,27,31$.
+		\end{enumerate}
+	\item	
+		\begin{enumerate}	
+		\item 
+			\[
+			\stackrel{\mbox{initial key $k_0$ (64-bit)}}{
+				\begin{matrix}
+					1&0&0&0&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			After $PC-1$,
+			
+			\[
+			\stackrel{\mbox{$k_0$ $PC-1$ (56-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&1\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			Split into halves (28-bit)
+			
+			\[
+			\stackrel{\mbox{$C_0$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&0&1\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+			\stackrel{\mbox{$D_0$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			Execute $LS_1$; 1 bit
+			
+			\[
+			\stackrel{\mbox{$C_1$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&0&1&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+			\stackrel{\mbox{$D_1$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			Execute $LS_2$; 1 bit
+			
+			\[
+			\stackrel{\mbox{$C_2$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&0&0&1&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+			\stackrel{\mbox{$D_2$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			Execute $LS_3$; 2 bit
+			
+			\[
+			\stackrel{\mbox{$C_3$ (28-bit)}}{
+				\begin{matrix}
+					0&0&0&1&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0
+				\end{matrix}}\quad\quad\quad\quad
+			\stackrel{\mbox{$D_3$ (28-bit)}}{
+				\begin{matrix}
+					{}&{}&{}&{}&0&0&0&0\\ 
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0\\
+					0&0&0&0&0&0&0&0
+				\end{matrix}}
+			\]
+			
+			\newpage
+			Execute $LS_{4,5,...,16}$ such that rounds $i=1,2,9,16$ shift left 1 bit, else shift 2 bits. The following bits are 1 for each $k_i$:
+			
+			\begin{align*}
+			k_1 &= 7 & k_9 &= 21\\
+			k_2 &= 6 & k_{10} &= 19\\
+			k_3 &= 4 & k_{11} &= 17\\
+			k_4 &= 2 & k_{12} &= 15\\
+			k_5 &= 28 & k_{13} &= 13\\
+			k_6 &= 26 & k_{14} &= 11\\
+			k_7 &= 24 & k_{15} &= 9\\
+			k_8 &= 22 & k_{16} &= 8
+			\end{align*}
+			
+		\item
+			Observing Table for $PC-2$, we have
+			
+			\[
+			\stackrel{\mbox{$PC-2$ (48-bit)}}{
+				\begin{matrix}
+					14&17&11&24&1&5&3&28\\ 
+					15&6&21&10&23&19&12&4\\
+					26&8&16&7&27&20&13&2\\
+					41&52&31&37&47&55&30&40\\
+					51&45&33&48&44&49&39&56\\
+					34&53&46&42&50&36&29&32
+				\end{matrix}}
+			\quad\Rightarrow\quad
+			\stackrel{\mbox{$PC-2$ (48-bit)}}{
+				\begin{matrix}
+					14&17&11&24&1&5\\
+					3&28&15&6&21&10\\
+					23&19&12&4&26&8\\
+					16&7&27&20&13&2\\
+					41&52&31&37&47&55\\
+					30&40&51&45&33&48\\
+					44&49&39&56&34&53\\
+					46&42&50&36&29&32
+				\end{matrix}}
+			\]
+			
+			With the table rearranged, it is a bit easier to see which $S_i$ Box is affected each $k_i$,
+			
+			\begin{align*}
+			k_1 &= S_{4} & k_9 &= S_{2}\\
+			k_2 &= S_{2} & k_{10} &= S_{3}\\
+			k_3 &= S_{3} & k_{11} &= S_{1}\\
+			k_4 &= S_{4} & k_{12} &= S_{2}\\
+			k_5 &= S_{2} & k_{13} &= S_{4}\\
+			k_6 &= S_{3} & k_{14} &= S_{1}\\
+			k_7 &= S_{1} & k_{15} &= \text{bit-9 does not carry over}\\
+			k_8 &= \text{bit-22 does not carry over} & k_{16} &= S_{3}
+			\end{align*}
+			
+			Observation: Since the keys only changed in $C_i$, only the first four $S$ Boxes are affected. For bits that a lost during $PC-2$, I assume this does not have an effect on the Boxes. 
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

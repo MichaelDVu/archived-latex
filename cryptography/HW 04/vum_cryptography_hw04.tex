@@ -1,0 +1,164 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\usepackage{amsmath, enumitem, tikz, pgf, mathtools, tabu}
+\usepackage{amssymb, amsmath, graphicx, amsthm, setspace}
+\usetikzlibrary{arrows, automata, positioning}
+\usepackage[latin1]{inputenc}
+\pagestyle{fancy}
+
+\lhead[lh-even]{\textbf{Michael Vu}}  
+\lfoot[lf-even]{} 
+\chead[ch-even]{\textbf{CSCI 3603 HW 4}}  
+\cfoot[cf-even]{} 
+\rhead[rh-even]{March 29, 2018}  
+\rfoot[rf-even]{}
+
+\begin{document}
+	\begin{enumerate}
+		\item %1.
+		\begin{enumerate}
+			\item %a.
+				\begin{flalign*}
+					24 &= 0(18) + 6 \\
+					18 &= 3(6) + 0 \\
+					(24,8) &= 6 &&
+				\end{flalign*}
+			
+			\item %b.
+				\begin{flalign*}
+					7469 &= 3(2464) + 77 \\
+					2469 &= 32(77) + 0 \\
+					(7469,2464) &= 77 &&
+				\end{flalign*}
+				
+			\item %c.
+				\begin{flalign*}
+					243 &= 1(198) + 45 \\
+					198 &= 4(45) + 18 \\
+					45 &= 2(18) + 9 \\
+					18 &= 2(9) + 0 \\
+					(198,243) &= 9 &&
+				\end{flalign*}
+		\end{enumerate}
+		
+		\item %2.
+		\begin{enumerate}
+			\item %a.
+			\quad \\
+			\begin{tabular}{ c | c c | c c }
+				$i$ & $q_i$ & $r_i$ & $s_i$ & $t_i$ \\ \hline
+				0 &   & 24 &  1 &  0 \\
+				1 &   & 18 &  0 &  1 \\
+				2 & 1 &  6 &  1 & -1 \\
+				3 & 3 &  0 & -3 &  4
+			\end{tabular}
+			
+			\item %b.
+			\quad \\
+			\begin{tabular}{ c | c c | c c }
+				$i$ & $q_i$ & $r_i$ & $s_i$ & $t_i$ \\ \hline
+				0 &    & 7469 &   1 &   0 \\
+				1 &    & 2464 &   0 &   1 \\
+				2 &  7 &   77 &   1 &  -3 \\
+				3 & 32 &    0 & -32 &  97
+			\end{tabular}
+			
+			\newpage
+			\item %c.
+			\quad \\
+			\begin{tabular}{ c | c c | c c }
+				$i$ & $q_i$ & $r_i$ & $s_i$ & $t_i$ \\ \hline
+				0 &   & 243 &   1 &   0 \\
+				1 &   & 198 &   0 &   1 \\
+				2 & 1 &  45 &   1 &  -1 \\
+				3 & 4 &  18 &  -4 &   5 \\
+				4 & 2 &   9 &   9 & -11 \\
+				5 & 2 &   0 & -22 &  27
+			\end{tabular}
+		\end{enumerate}
+		
+		\bigskip
+		\item %3.
+		\begin{enumerate}
+			\item %a.
+			$a^{-1} = 15$ \\
+			\begin{tabular}{ c | c c | c c }
+				$i$ & $q_i$ & $r_i$ & $s_i$ & $t_i$ \\ \hline
+				0 &   & 26 &  &   0 \\
+				1 &   &  7 &  &   1 \\
+				2 & 3 &  5 &  &  -3 \\
+				3 & 1 &  2 &  &   4 \\
+				4 & 2 &  1 &  & -11
+			\end{tabular}
+			
+			\bigskip
+			\item %b.
+			$a^{-1} = 631$ \\
+			\begin{tabular}{ c | c c | c c }
+				$i$ & $q_i$ & $r_i$ & $s_i$ & $t_i$ \\ \hline
+				0 &    & 999 &  &    0 \\
+				1 &    &  19 &  &    1 \\
+				2 & 52 &  11 &  &  -52 \\
+				3 &  1 &   8 &  &   53 \\
+				4 &  1 &   3 &  & -105 \\
+				5 &  2 &   2 &  &  263 \\
+				6 &  1 &   1 &  & -368
+			\end{tabular}
+		\end{enumerate}
+		
+		\bigskip
+		\item %4.
+		\begin{enumerate}
+			\item $\Phi(8) = 8(1 - \frac{1}{2}) = 4$
+			\item $\Phi(15) = 15(1 - \frac{1}{3}) (1 - \frac{1}{5}) = 8$
+			\item $\Phi(17) = 17(1 - \frac{1}{17}) = 16$
+		\end{enumerate}
+		
+		\bigskip
+		\item %5.
+		\begin{enumerate}
+			\item %a.
+			\begin{flalign*}
+				4^6 &\equiv 1 \pmod 7 \\
+				4(4^5) &\equiv 1 \pmod 7 \\
+				4^{-1} &\equiv 4^5 \pmod 7 = 2 &&
+			\end{flalign*}
+			
+			\item %b.
+			\begin{flalign*}
+				5^4 &\equiv 1 \pmod{12} \\
+				5(5^3) &\equiv 1 \pmod{12} \\
+				5^{-1} &\equiv 5^3 \pmod{12} = 5 &&
+			\end{flalign*}
+			
+			\bigskip
+			\item %c.
+			\begin{flalign*}
+				6^{12} &\equiv 1 \pmod{13} \\
+				6(6^{11}) &\equiv 1 \pmod{13} \\
+				6^{-1} &\equiv 6^{11} \pmod{13} = 11 &&
+			\end{flalign*}
+		\end{enumerate}
+		
+		\bigskip
+		\item %6.
+		\begin{enumerate}
+			\item %a.
+			\begin{flalign*}
+				p&=5	&	n&=55 \\
+				q&=11	&	\Phi(n)&=40	\\
+				e&=3	&	d&=27 \\
+				x&=9	&	y&=14 &&
+			\end{flalign*}
+			
+			\bigskip
+			\item %b.
+			\begin{flalign*}
+				p&=7	&	n&=91 \\
+				q&=13	&	\Phi(n)&=72	\\
+				e&=5	&	d&=29 \\
+				x&=2	&	y&=32 &&
+			\end{flalign*}
+		\end{enumerate}
+	\end{enumerate}
+\end{document}
